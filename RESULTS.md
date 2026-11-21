@@ -1,110 +1,124 @@
-# Reproduction yield: wave 1
+# Reproduction yield
 
-Measured 2026-11-21. `scripts/reproduce.py`, `scripts/run_pool.py`; raw records in `results/wave1.json`.
-
-## Corpus snapshot
-
-Wave 1 sampled the corpus as it stood on **2026-11-19**: 1,488 merged pull requests, 1,494 fixes
-with code, 898 usable in Go, Python or TypeScript. The corpus is rebuilt every six hours. On
-2026-11-20 it held 1,599 merged and 1,605 fixes with code, of which 1,349 are usable and 960 are in
-Go, Python or TypeScript. The 111 newer fixes were rescored: none of the earlier ones was dropped
-and no earlier verdict changed. They were not part of the sample, so the figures below describe the
-2026-11-19 pool. `data/scored_snapshot_2026-11-19.json` keeps that pool exactly.
+Measured 2026-11-21 on the corpus as of 2026-11-20. Records: `results/pool_final_2026-11-20.json`
+(one per instance, the retry pass applied over the first pass); raw runs in
+`results/pool_2026-11-20.jsonl` and `results/pool_retry_2026-11-20.jsonl`; the tool versions of
+the run in `results/pool_toolchain_2026-11-20.json`.
 
 ## Headline
 
-**81 of 120 randomly sampled instances reproduce: 68% (95% interval 59% to 75%).**
+**625 of the 960 usable Go, Python and TypeScript fixes (65.1%) can be turned into a runnable
+instance:** at the pull request's base commit the test half of the change fails, with the code half
+applied it passes, the runner's own test counts confirm that tests ran, and both results held on a
+second run.
 
-Reproduce means: at the pull request's base commit, the test half of the change fails, and with
-the code half applied it passes, with the runner's own test counts confirming that tests ran.
+This is a census of the pool, not an estimate. The earlier random sample of 120 had predicted
+68% (interval 59% to 75%); the same 120 on the final harness give 81 of 119 (68.1%,
+interval 59% to 76%), and the full pool lands inside that interval. One of the 120 is
+missing from the run because its repository's language label changed to "unknown" between two
+corpus snapshots and it fell outside the Go, Python and TypeScript pool.
 
-| Language | Reproduced | Interval |
+| Language | Whole pool | The 120-instance sample |
 | --- | --- | --- |
-| Go | 33 of 40 (82%) | 68% to 91% |
-| Python | 24 of 40 (60%) | 45% to 74% |
-| TypeScript | 24 of 40 (60%) | 45% to 74% |
+| Go | 249 of 306 (81%) | 32 of 40 (80%) |
+| Python | 256 of 451 (57%) | 26 of 41 (63%) |
+| TypeScript | 120 of 203 (59%) | 23 of 38 (61%) |
 
-Of the 81, 76 fail at base by a failed assertion and 5 by "no tests ran at base", which
-counts only because the fix then makes tests run. One needed a missing test dependency installed
-from a fixed allowlist. They span 54 repositories.
+The pool is the 960 fixes that the static scorer rated usable (`data/scored_snapshot_2026-11-20.json`)
+out of the corpus's 1,605 fixes with code; the other usable fixes are in languages without a runner
+here, such as C#, Ruby, Rust, Java and PHP.
 
-## What the sample is
+## What the 625 instances are
 
-Random, not chosen: 40 per language from the 898 instances that the static scorer rated `candidate`
-or `maybe` in Go, Python or TypeScript, at most 3 per repository, seed 7. This matters because a
-hand-picked sample of 14 that I built earlier reproduced 14 of 14, and a random sample of 6
-reproduced 1. The difference was selection, not the harness.
+- They span **151 repositories**. The five largest hold 17% of the instances and the ten
+  largest 30%. 18 repositories have more than 10 instances; a cap of 10 per repository would
+  remove 114 instances and leave 511.
+- 571 fail at base by a failed assertion, 45 because no test could run at base and 9 by an import
+  or build error. Of the 45, 42 are Go and 3 TypeScript, and almost all are a test that does not compile
+  or resolve at base because it uses something the fix adds. They count only because the fix then makes
+  the tests run, and are the weakest signal.
+- All 625 were run twice on each side. None changed result, so none was flaky.
+- Size of the code change shows no consistent trend in whether an instance reproduces:
 
-Extrapolated with the per-language rates: about 605 reproducible of the 898 in the 2026-11-19 pool
-(interval roughly 527 to 676), and about 645 of the 960 in the 2026-11-20 pool. That is an
-estimate for this pipeline in this sandbox, not a property of the corpus, and it assumes the newer
-fixes behave like the sampled ones, which is plausible (same pipeline) but not measured.
+| Code change | Reproduced |
+| --- | --- |
+| Under 20 lines | 361 of 584 (62%) |
+| 20 to 59 lines | 204 of 274 (74%) |
+| 60 to 149 lines | 47 of 84 (56%) |
+| 150 lines or more | 13 of 18 (72%) |
 
-## Why the other 39 did not
+| Category | Reproduced |
+| --- | --- |
+| Application logic | 151 of 284 (53%) |
+| Streaming and tool calls | 133 of 171 (78%) |
+| Provider API compatibility | 116 of 156 (74%) |
+| Token usage and cost | 62 of 81 (77%) |
+| Errors, retries and limits | 47 of 78 (60%) |
+| Parsing and validation | 40 of 66 (61%) |
+| Retired model defaults | 32 of 52 (62%) |
+| Concurrency and async | 21 of 34 (62%) |
+
+The manifest `data/instances_2026-11-20.jsonl` lists the 625 instances with their base commit, test files,
+runner and counts. See `data/README.md`.
+
+## The 335 that did not reproduce
 
 | Count | Cause | Kind |
 | --- | --- | --- |
-| 20 | A long tail of environment problems, each different | open |
-| 6 | Tests ran and still fail after the fix | real, possibly flaky or context-dependent |
-| 3 | Test type with no runner here (Helm YAML) | inherent |
-| 3 | Needs a private registry or a blocked host | inherent to the sandbox |
-| 2 | A workspace member is missing at the base commit | inherent |
-| 2 | Needs a toolchain not installed here (Node 24, bun) | inherent, fixable by installing it |
-| 2 | Dependency install exceeds the time limit | inherent to the limit |
-| 1 | Tests exceed the time limit | inherent to the limit |
+| 183 | Other environment problems, not classified | open |
+| 50 | A Python test dependency is missing | open, fixable per repository |
+| 35 | A JavaScript package the test imports is not built | open, fixable per repository |
+| 35 | Tests ran and still fail after the fix | real, possibly flaky or context-dependent |
+| 9 | A workspace member is missing at the base commit | inherent |
+| 8 | The test passes without the fix, so it does not catch the bug | not an instance |
+| 7 | Test type with no runner here (Helm YAML) | inherent |
+| 4 | Time limit exceeded | inherent to the limit |
+| 4 | The change could not be isolated | method |
 
-The earlier category "history does not isolate the change" is gone. It was 15 instances (12%) and
-came from inferring a pull request's change from commit structure. Isolation now applies the
-per-file patches GitHub recorded and finds the base by matching their preimage against real file
-contents, on the branch first and on the upstream default branch just before `merged_at` if the
-branch never contained that state (merged pull requests are diffed against the base branch as it
-was at merge time, which can be newer than the contributor's branch). All 15 resolve; 5 of them
-now reproduce and the rest fall into the environment tail above. A regression check on 12
-instances that already reproduced kept 12 of 12.
+A retry of the 285 environment failures recovered **1**. Almost all are
+deterministic rather than transient, so retrying is not worth the hours.
 
-## Breakdowns, with the caveat that each cell is small
+**They cluster by repository.** They sit in 140 repositories. In **24 repositories with three or more instances, every
+instance failed, and together they hold 158 of the 335 failures (47%)**. The largest:
 
-| Slice | Reproduced | Interval |
-| --- | --- | --- |
-| Scorer verdict `candidate` | 31 of 43 (72%) | 57% to 83% |
-| Scorer verdict `maybe` | 50 of 77 (65%) | 54% to 75% |
-| Code change under 20 lines | 55 of 81 (68%) | 57% to 77% |
-| Code change 20 to 59 lines | 22 of 28 (79%) | 60% to 90% |
-| Code change 60 lines or more | 4 of 11 (36%) | 15% to 65% |
-| Streaming and tool calls | 23 of 28 (82%) | 64% to 92% |
-| Provider API compatibility | 14 of 18 (78%) | 55% to 91% |
-| Application logic | 25 of 42 (60%) | 44% to 73% |
-| Repositories with 10k or more stars | 17 of 27 (63%) | 44% to 78% |
-| Repositories under 10k stars | 64 of 93 (69%) | 59% to 77% |
+| Repository | Not reproduced |
+| --- | --- |
+| `Abilityai/trinity` | 15 of 15 |
+| `posit-dev/pointblank` | 14 of 14 |
+| `NPC-Worldwide/npcpy` | 13 of 13 |
+| `temporalio/ai-integrations` | 11 of 11 |
+| `jxxghp/MoviePilot` | 9 of 9 |
+| `Mirascope/mirascope` | 9 of 24 |
+| `GoDiao/dreamcoder` | 8 of 8 |
+| `truera/trulens` | 7 of 7 |
+| `rommapp/romm` | 7 of 7 |
+| `i-am-bee/beeai-framework` | 6 of 21 |
 
-- The static scorer predicts something but weakly: the `candidate` and `maybe` intervals overlap.
-- **Large changes are not a reproducibility problem.** Before the isolation change 60 lines or
-  more reproduced 0 of 11, which looked like a property of large fixes and was an artefact of the
-  isolation. It is now 4 of 11. The interval is still wide.
-- Small changes are not a reproducibility problem either. Whether to floor them is a design
-  decision about difficulty, not about validity.
-- Popular and small repositories reproduce at similar rates; the intervals overlap.
+That points at one preparation problem per repository (a test dependency that is not declared, a
+package that has to be built first, a service the tests expect), not at the instances themselves.
+Fixing those 24 repositories could recover up to 158 instances; how many it would really recover
+depends on how many have a fix that a generic harness can apply, which is unmeasured. It is the
+likeliest cheapest route above 65%.
 
 ## What this does not establish
 
-- **One run per side.** Flaky tests are not detected. An instance that passes once could fail on
-  another run, and a failing-at-base result could be flakiness rather than the bug.
-- **n = 120.** Language rates have intervals of about 25 points. The sample caps repositories at
-  3, so the rates describe a more diverse draw than the pool, which is concentrated.
-- **Only three runners.** C#, Ruby, Rust, Java and PHP, about 350 of the 1,249 usable instances on
-  2026-11-19, have none here (`dotnet` is not installed).
-- **Each instance was last run by the harness version current at that time.** Later versions
-  only fixed things; the regression check found no loss, but the whole sample was not rerun on the
-  final version.
-- **Failing at base is not proof the test checks the intended behaviour.** It shows the test
-  distinguishes the two states, which is the standard used by comparable benchmarks.
+- **Only the 625 that reproduced were run twice.** A flaky test among the failures may have turned a
+  valid instance into a failure; that is unmeasured.
+- **Failing at base is not proof that the test checks the intended behaviour.** It shows the test
+  distinguishes the two states, which is the standard comparable benchmarks use.
+- **Toolchain.** The run used go1.22.2 linux/amd64, Node v22.23.5, pnpm 12.21.0, uv 0.13.9, Python 3.12.3 on WSL 2
+  with 8 cores. The earlier sample ran on Go 1.24, Node 22 and pnpm 10 and agrees, but outcomes depend on
+  versions, so the toolchain file ships with the results.
+- **Three runners.** About 390 usable instances are in languages with none.
 - **Contamination is not measured.** These fixes are public and recent.
+- **The sanitizer** that removes account names from error text also rewrote one legitimate
+  directory called `home/...` in one message (docker/docker-agent#4924).
 
-## Harness changes made along the way (each from a failure this wave exposed)
+## How the harness decides
 
-Validity from parsed test counts rather than exit codes; the change isolated from GitHub's
-recorded per-file patches; runner chosen by the test file's extension; nearest `go.mod`, `go.work`
-and cgo for Go; `uv sync` from the owning package, with plugins, Python 3.12 preferred, and an
-allowlisted dependency healer for Python; runner and build resolved from the test's package for JS,
-with `engines.pnpm` pins honoured; one managed cache per toolchain, pnpm's store included, with a
-disk floor of 10 GB.
+Validity comes from test counts parsed from machine-readable runner output, never from an exit code.
+The change is isolated from the per-file patches GitHub recorded for each pull request, with the base
+found by matching their preimage against real file contents, first on the pull request's branch and,
+if the branch never had that state, on the upstream default branch just before the merge. The runner
+is chosen by the test file's extension, and an allowlisted set of well-known test libraries may be
+installed when a Python test cannot import them. `scripts/reproduce.py` has the details.

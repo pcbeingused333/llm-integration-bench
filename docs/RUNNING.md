@@ -1,8 +1,8 @@
 # Running the full pool
 
-**Status: ready.** The environment check and a three-minute test (step 5) pass on WSL with the same
-outcomes as the machine this was developed on. The headline yield figure will be taken from this
-run, restricted to the 120 instances in `data/sample_120.json`, so nothing is run twice.
+**Status: done once.** The full run of the 2026-11-20 pool was made following these instructions and its
+results are in `results/` (see `RESULTS.md`). They are kept so that the run can be repeated, for
+example on a newer corpus or with a fixed harness.
 
 This is written for Ubuntu under WSL 2 on Windows, and works the same on Linux. Expect 8 to 14
 hours with 4 to 5 workers, 60 GB of free disk and 8 GB of memory or more (5 workers suit 8 cores

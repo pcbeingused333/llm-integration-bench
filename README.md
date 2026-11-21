@@ -1,8 +1,10 @@
 # llm-integration-bench
 
-Work in progress: a benchmark of LLM-integration bug fixes that upstream maintainers merged. What is
-measured so far is the share that can be turned into a runnable instance (`RESULTS.md`); the
-dataset itself has not been built yet.
+A benchmark of LLM-integration bug fixes that upstream maintainers merged. Of 960 usable Go, Python
+and TypeScript fixes, **625 turn into runnable instances** (65%): the test fails at the base commit,
+passes with the fix, and both results hold on a second run. `RESULTS.md` has the figures and what
+they do not establish; `data/instances_2026-11-20.jsonl` is the list. Version 0.1, work in progress:
+no model has been evaluated on it yet.
 
 ## Working notes
 
