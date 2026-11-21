@@ -29,8 +29,10 @@ import concurrent.futures as cf
 import importlib.util
 import json
 import os
+import platform
 import random
 import shutil
+import subprocess
 import sys
 import time
 
@@ -45,6 +47,23 @@ def load_harness():
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod
+
+
+def toolchain() -> dict:
+    """The tool versions in effect, saved beside the results: outcomes depend on them (a newer
+    Node or uv changes what installs and runs), so a result is only interpretable with them."""
+    out = {}
+    for name, cmd in (("go", ["go", "version"]), ("uv", ["uv", "--version"]),
+                      ("node", ["node", "--version"]), ("pnpm", ["pnpm", "--version"]),
+                      ("python", ["python3", "--version"]), ("gcc", ["gcc", "--version"])):
+        try:
+            out[name] = subprocess.run(cmd, capture_output=True, text=True,
+                                       timeout=20).stdout.splitlines()[0]
+        except Exception:
+            out[name] = None
+    out["os"] = platform.platform()
+    out["cpus"] = os.cpu_count()
+    return out
 
 
 def free_gb(path: str) -> float:
@@ -129,6 +148,9 @@ def main() -> int:
         return 0
 
     os.makedirs(a.workdir, exist_ok=True)
+    with open(a.results + ".toolchain.json", "w") as f:
+        json.dump(dict(started=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                       workers=a.workers, **toolchain()), f, indent=1)
     caches = {}
     for lang, sub in (("Go", "gomod"), ("Python", "uv"), ("TypeScript", "npm"),
                       ("JavaScript", "npm")):

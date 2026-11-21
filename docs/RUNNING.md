@@ -4,8 +4,9 @@
 the 120-instance sample on the final harness; if it shows a systematic problem the scripts change
 and a long run started now would be wasted.
 
-This is written for Ubuntu under WSL 2 on Windows, and works the same on Linux. Expect 9 to 14
-hours with 4 workers, 60 GB of free disk and 8 GB of memory or more. The run is resumable: if it
+This is written for Ubuntu under WSL 2 on Windows, and works the same on Linux. Expect 8 to 14
+hours with 4 to 5 workers, 60 GB of free disk and 8 GB of memory or more (5 workers suit 8 cores
+and 16 GB; with fewer, use `--workers 3` or `4`). The run is resumable: if it
 stops, run the same command again and it continues from the last finished instance.
 
 Keep Windows from sleeping while it runs (Settings, System, Power, Screen and sleep: set both
@@ -36,6 +37,9 @@ echo 'export PATH="$HOME/.uvenv/bin:$PATH"' >> ~/.zshrc
 ```
 
 ## 3. Node 22 and pnpm
+
+If `node --version` already prints 22 or higher and `pnpm --version` prints a version, skip this
+step: a newer Node is fine.
 
 Download from nodejs.org and check the published checksum before installing. The `sha256sum`
 line must print `...tar.xz: OK`; if it does not, stop.
@@ -81,7 +85,7 @@ Use `/tmp/work` as the work directory, so that no account name ends up in paths:
 
 ```sh
 cd ~/bench-run/llm-integration-bench
-nohup python3 -I scripts/run_pool.py ../merge-log-data data/scored_snapshot_2026-11-20.json /tmp/work ../pool.jsonl --workers 4 > ../pool.log 2>&1 &
+nohup python3 -I scripts/run_pool.py ../merge-log-data data/scored_snapshot_2026-11-20.json /tmp/work ../pool.jsonl --workers 5 > ../pool.log 2>&1 &
 tail -f ../pool.log
 ```
 
@@ -90,7 +94,7 @@ free disk. If the run stops, repeat the same
 command. When it ends, run a retry pass for the instances that failed on environment grounds:
 
 ```sh
-nohup python3 -I scripts/run_pool.py ../merge-log-data data/scored_snapshot_2026-11-20.json /tmp/work ../pool_retry.jsonl --retry-from ../pool.jsonl --workers 4 > ../pool_retry.log 2>&1 &
+nohup python3 -I scripts/run_pool.py ../merge-log-data data/scored_snapshot_2026-11-20.json /tmp/work ../pool_retry.jsonl --retry-from ../pool.jsonl --workers 5 > ../pool_retry.log 2>&1 &
 ```
 
 ## 7. Publish the results
@@ -103,6 +107,7 @@ cd ~/bench-run/llm-integration-bench
 mkdir -p results
 python3 -I scripts/sanitize_results.py ../pool.jsonl        results/pool_2026-11-20.jsonl       --workdir /tmp/work
 python3 -I scripts/sanitize_results.py ../pool_retry.jsonl  results/pool_retry_2026-11-20.jsonl --workdir /tmp/work
+cp ../pool.jsonl.toolchain.json results/pool_toolchain_2026-11-20.json
 git checkout -b results-pool-2026-11-20
 git add results
 git commit -m "Add the full-pool results for the 2026-11-20 corpus"
@@ -110,4 +115,5 @@ git push -u origin results-pool-2026-11-20
 ```
 
 If the push asks for a login, run `gh auth login` first (install the GitHub CLI with
-`sudo apt install -y gh` if needed). Then tell Claude the branch name; the results are read from there.
+`sudo apt install -y gh` if needed). The `toolchain` file records the tool versions the run used. Outcomes depend on them, so it is
+published with the results. Then tell Claude the branch name; the results are read from there.
