@@ -1,0 +1,6 @@
+merge-log-data commit: 52780cead917ca3e965ddb45dc176db93c1f986c
+corpus generated_at:   2026-11-20T20:33Z
+merged pull requests:  1599
+fixes with code:       1605
+usable (candidate or maybe), Go/Python/TypeScript: 960
+scored pool:           data/scored_snapshot_2026-11-20.json
