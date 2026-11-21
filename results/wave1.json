@@ -1,0 +1,3071 @@
+[
+ {
+  "repo": "olekukonko/tablewriter",
+  "number": 360,
+  "lang": "Go",
+  "title": "fix: preserve columns for nil embedded struct pointers",
+  "url": "https://github.com/olekukonko/tablewriter/pull/360",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 49,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 49,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 4.9,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json .",
+  "base": "00f2d7f562a3"
+ },
+ {
+  "repo": "Agent-Field/agentfield",
+  "number": 1150,
+  "lang": "Go",
+  "title": "fix(sdk-python): request stream usage for more LiteLLM providers",
+  "url": "https://github.com/Agent-Field/agentfield/pull/1150",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 24,
+   "failed": 5,
+   "errored": false,
+   "why": "KeyError: 'stream_options' monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f2164876f30> agent_with_ai = StubAgent(node_id='stub-node', agentfield_server='http://agentfield', callback_url=None, base_url=None, version='0.0.0...g'>, callback_candidates=[], _notification_dispatcher=<tests.helpers.InlineTestingDispatcher object at 0x7f2164875f10>) model = 'azure/my-deployment', expected = True @pytest.mark.asy"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 24,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 21.9,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd <workdir>/Agent-Field__agentfield-1150/sdk/python && <workdir>/Agent-Field__agentfield-1150/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.Agent-Field__agentfield-1150-result tests/test_agent_ai_comprehensive.py",
+  "base": "6bb987c86ee0"
+ },
+ {
+  "repo": "aws/aws-network-policy-agent",
+  "number": 748,
+  "lang": "Go",
+  "title": "fix(fwruleprocessor): canonicalize CIDRs before sorting by prefix length",
+  "url": "https://github.com/aws/aws-network-policy-agent/pull/748",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "2 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 78,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 78,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 30.1,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./pkg/fwruleprocessor",
+  "base": "bb863c88d30d"
+ },
+ {
+  "repo": "nextlevelbuilder/goclaw",
+  "number": 1666,
+  "lang": "Go",
+  "title": "fix(spawn): isolate list, wait, and cancel by origin session",
+  "url": "https://github.com/nextlevelbuilder/goclaw/pull/1666",
+  "outcome": "STILL_FAILS_AFTER_FIX",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true
+  },
+  "after": {
+   "rc": 1,
+   "ran": 1451,
+   "failed": 2,
+   "errored": false
+  },
+  "seconds": 96.2,
+  "detail": "ub.com/nextlevelbuilder/goclaw/internal/tools\",\"Test\":\"TestSkillManagePatchCopiesExistingLargeCompanionUnderTotalLimit\",\"Output\":\"--- PASS: TestSkillManagePatchCopiesExistingLargeCompanionUnderTotalLimit (0.08s)\\n\"}\n{\"Time\":\"2026-11-21T00:06:47.457380162Z\",\"Action\":\"pass\",\"Package\":\"github.com/nextlevelbuilder/goclaw/internal/tools\",\"Test\":\"TestSkillManagePatchCopiesExistingLargeCompanionUnderTotalLimit\",\"Elapsed\":0.08}\n{\"Time\":\"2026-11-21T00:06:47.45738228Z\",\"Action\":\"output\",\"Package\":\"github.com/nextlevelbuilder/goclaw/internal/tools\",\"Output\":\"FAIL\\n\"}\n{\"Time\":\"2026-11-21T00:06:47.466666719Z\",\"Action\":\"output\",\"Package\":\"github.com/nextlevelbuilder/goclaw/internal/tools\",\"Output\":\"FAIL\\tgithub.com/nextlevelbuilder/goclaw/internal/tools\\t18.312s\\n\"}\n{\"Time\":\"2026-11-21T00:06:47.466684401Z\",\"Action\":\"fail\",\"Package\":\"github.com/nextlevelbuilder/goclaw/internal/tools\",\"Elapsed\":18.312}\n",
+  "cmd": "go -C . test -count=1 -json ./internal/tools",
+  "base": "574bb1ce1df6"
+ },
+ {
+  "repo": "fleetdm/fleet",
+  "number": 58037,
+  "lang": "Go",
+  "title": "fix(fma): retry then force-detach busy DMG volumes after install",
+  "url": "https://github.com/fleetdm/fleet/pull/58037",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "upstream default branch, 1 commits before the merge",
+  "before": {
+   "rc": 1,
+   "ran": 163,
+   "failed": 1,
+   "errored": false,
+   "why": "FAIL | FAIL\tgithub.com/fleetdm/fleet/v4/ee/maintained-apps/ingesters/homebrew\t1.358s"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 163,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 125.3,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./ee/maintained-apps/ingesters/homebrew",
+  "base": "fbd96e54a4ba"
+ },
+ {
+  "repo": "labring/aiproxy",
+  "number": 687,
+  "lang": "Go",
+  "title": "fix(coze): set finish_reason stop on the final streamed chunk",
+  "url": "https://github.com/labring/aiproxy/pull/687",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "2 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 2,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 2,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 139.7,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C core test -count=1 -json ./relay/adaptor/coze",
+  "base": "fde529db5bdf"
+ },
+ {
+  "repo": "looplj/axonhub",
+  "number": 2851,
+  "lang": "Go",
+  "title": "fix(ollama): keep tool calls that arrive in separate stream chunks",
+  "url": "https://github.com/looplj/axonhub/pull/2851",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 10,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 10,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 64.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C llm test -count=1 -json ./transformer/ollama",
+  "base": "03ffac6f96b4"
+ },
+ {
+  "repo": "donetick/donetick",
+  "number": 898,
+  "lang": "Go",
+  "title": "fix(label): remove chore labels attached by another member",
+  "url": "https://github.com/donetick/donetick/pull/898",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 1,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 1,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 104.8,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./internal/label/repo",
+  "base": "9d9921d45efe"
+ },
+ {
+  "repo": "Tencent/WeKnora",
+  "number": 4592,
+  "lang": "Go",
+  "title": "fix(googlegenai): map the remaining safety finish reasons to content_filter",
+  "url": "https://github.com/Tencent/WeKnora/pull/4592",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 51,
+   "failed": 6,
+   "errored": false,
+   "why": "FAIL | FAIL\tgithub.com/Tencent/WeKnora/internal/models/api/googlegenai\t0.620s"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 51,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 70.1,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./internal/models/api/googlegenai",
+  "base": "e28c68cf552c"
+ },
+ {
+  "repo": "henrygd/beszel",
+  "number": 2715,
+  "lang": "Go",
+  "title": "fix(agent): only add AMD GTT memory on unified memory devices",
+  "url": "https://github.com/henrygd/beszel/pull/2715",
+  "outcome": "REPRODUCED",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "upstream default branch, 1 commits before the merge",
+  "before": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true,
+   "why": "# github.com/henrygd/beszel/agent [github.com/henrygd/beszel/agent.test] | agent/gpu_amd_linux_test.go:391:18: undefined: amdGpuIsUnifiedMemory | agent/gpu_amd_linux_test.go:394:18: undefined: amdGpuIsUnifiedMemory | agent/gpu_amd_linux_test.go:396:18: undefined: amdGpuIsUnifiedMemory | agent/gpu_amd_linux_test.go:401:18: undefined: amdGpuIsUnifiedMemory | agent/gpu_amd_linux_test.go:402:19: undefined: amdGpuIsUnifie"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 146,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 48.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./agent",
+  "base": "23efee9adf44"
+ },
+ {
+  "repo": "labring/aiproxy",
+  "number": 686,
+  "lang": "Go",
+  "title": "fix(baidu): report finish_reason length when is_truncated is set",
+  "url": "https://github.com/labring/aiproxy/pull/686",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 3,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 3,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 29.6,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C core test -count=1 -json ./relay/adaptor/baidu",
+  "base": "fde529db5bdf"
+ },
+ {
+  "repo": "aandrew-me/tgpt",
+  "number": 521,
+  "lang": "Go",
+  "title": "fix(providers): send --temperature and --top_p in chat completion requests",
+  "url": "https://github.com/aandrew-me/tgpt/pull/521",
+  "outcome": "STILL_FAILS_AFTER_FIX",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 2,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 1,
+   "ran": 2,
+   "failed": 1,
+   "errored": false
+  },
+  "seconds": 52.4,
+  "detail": "ampling\\n\"}\n{\"Time\":\"2026-11-21T00:12:22.144000929Z\",\"Action\":\"output\",\"Package\":\"github.com/aandrew-me/tgpt/v2/src/providers/openai\",\"Test\":\"TestRequestLeavesOutUnsetSampling\",\"Output\":\"--- PASS: TestRequestLeavesOutUnsetSampling (0.23s)\\n\"}\n{\"Time\":\"2026-11-21T00:12:22.144043742Z\",\"Action\":\"pass\",\"Package\":\"github.com/aandrew-me/tgpt/v2/src/providers/openai\",\"Test\":\"TestRequestLeavesOutUnsetSampling\",\"Elapsed\":0.23}\n{\"Time\":\"2026-11-21T00:12:22.14405467Z\",\"Action\":\"output\",\"Package\":\"github.com/aandrew-me/tgpt/v2/src/providers/openai\",\"Output\":\"FAIL\\n\"}\n{\"Time\":\"2026-11-21T00:12:22.144934672Z\",\"Action\":\"output\",\"Package\":\"github.com/aandrew-me/tgpt/v2/src/providers/openai\",\"Output\":\"FAIL\\tgithub.com/aandrew-me/tgpt/v2/src/providers/openai\\t0.484s\\n\"}\n{\"Time\":\"2026-11-21T00:12:22.144977317Z\",\"Action\":\"fail\",\"Package\":\"github.com/aandrew-me/tgpt/v2/src/providers/openai\",\"Elapsed\":0.485}\n",
+  "cmd": "go -C . test -count=1 -json ./src/providers/openai",
+  "base": "53d4da2bed63"
+ },
+ {
+  "repo": "dbos-inc/dbos-transact-golang",
+  "number": 520,
+  "lang": "Go",
+  "title": "fix: treat workflow ID and schedule name prefix filters as literal",
+  "url": "https://github.com/dbos-inc/dbos-transact-golang/pull/520",
+  "outcome": "STILL_FAILS_AFTER_FIX",
+  "fail_kind": "assertion",
+  "resolved_by": "recorded patches, base 3 commits below the tip",
+  "before": {
+   "rc": 1,
+   "ran": 480,
+   "failed": 293,
+   "errored": false,
+   "why": "FAIL | FAIL\tgithub.com/dbos-inc/dbos-transact-golang/dbos\t25.235s"
+  },
+  "after": {
+   "rc": 1,
+   "ran": 480,
+   "failed": 293,
+   "errored": false,
+   "why": "FAIL | FAIL\tgithub.com/dbos-inc/dbos-transact-golang/dbos\t23.791s"
+  },
+  "seconds": 130.4,
+  "detail": "om/dbos-inc/dbos-transact-golang/dbos\",\"Test\":\"TestRewind\",\"Output\":\"        \\tTest:       \\tTestRewind\\n\"}\n{\"Time\":\"2026-11-21T04:44:30.872272549Z\",\"Action\":\"output\",\"Package\":\"github.com/dbos-inc/dbos-transact-golang/dbos\",\"Test\":\"TestRewind\",\"Output\":\"--- FAIL: TestRewind (0.02s)\\n\"}\n{\"Time\":\"2026-11-21T04:44:30.872278232Z\",\"Action\":\"fail\",\"Package\":\"github.com/dbos-inc/dbos-transact-golang/dbos\",\"Test\":\"TestRewind\",\"Elapsed\":0.02}\n{\"Time\":\"2026-11-21T04:44:30.872288144Z\",\"Action\":\"output\",\"Package\":\"github.com/dbos-inc/dbos-transact-golang/dbos\",\"Output\":\"FAIL\\n\"}\n{\"Time\":\"2026-11-21T04:44:30.873484642Z\",\"Action\":\"output\",\"Package\":\"github.com/dbos-inc/dbos-transact-golang/dbos\",\"Output\":\"FAIL\\tgithub.com/dbos-inc/dbos-transact-golang/dbos\\t23.791s\\n\"}\n{\"Time\":\"2026-11-21T04:44:30.873498027Z\",\"Action\":\"fail\",\"Package\":\"github.com/dbos-inc/dbos-transact-golang/dbos\",\"Elapsed\":23.791}\n",
+  "cmd": "go -C . test -count=1 -json ./dbos",
+  "base": "0c1dd36a4143"
+ },
+ {
+  "repo": "nextlevelbuilder/goclaw",
+  "number": 1669,
+  "lang": "Go",
+  "title": "fix(providers): keep Codex streamed tool calls in model order",
+  "url": "https://github.com/nextlevelbuilder/goclaw/pull/1669",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 773,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 773,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 89.7,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./internal/providers",
+  "base": "5790d346c03c"
+ },
+ {
+  "repo": "OpenCSGs/csghub-server",
+  "number": 1615,
+  "lang": "Go",
+  "title": "fix(aigateway): report Anthropic input_tokens without cache reads",
+  "url": "https://github.com/OpenCSGs/csghub-server/pull/1615",
+  "outcome": "REPRODUCED",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "3 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true
+  },
+  "after": {
+   "rc": 0,
+   "ran": 185,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 234.8,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./aigateway/handler/anthropic",
+  "base": "97d62befe24f"
+ },
+ {
+  "repo": "OpenCSGs/csghub-server",
+  "number": 1636,
+  "lang": "Go",
+  "title": "fix(aigateway): moderate both streamed reasoning fields in native chat",
+  "url": "https://github.com/OpenCSGs/csghub-server/pull/1636",
+  "outcome": "STILL_FAILS_AFTER_FIX",
+  "fail_kind": "assertion",
+  "resolved_by": "3 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 1,
+   "failed": 1,
+   "errored": false,
+   "why": "FAIL\topencsg.com/csghub-server/aigateway/component\t0.054s"
+  },
+  "after": {
+   "rc": 1,
+   "ran": 1,
+   "failed": 1,
+   "errored": false,
+   "why": "FAIL\topencsg.com/csghub-server/aigateway/component\t0.060s"
+  },
+  "seconds": 159.3,
+  "detail": " testing.(*T).Run in goroutine 1\\n\"}\n{\"Time\":\"2026-11-21T03:52:25.609957282Z\",\"Action\":\"output\",\"Package\":\"opencsg.com/csghub-server/aigateway/component\",\"Test\":\"TestE2E_DeploySync_RunningCreatesUpstream\",\"Output\":\"\\t<workdir>/_cache/gomod/golang.org/toolchain@v0.0.1-go1.26.0.linux-amd64/src/testing/testing.go:2101 +0x4c5\\n\"}\n{\"Time\":\"2026-11-21T03:52:25.612422512Z\",\"Action\":\"fail\",\"Package\":\"opencsg.com/csghub-server/aigateway/component\",\"Test\":\"TestE2E_DeploySync_RunningCreatesUpstream\",\"Elapsed\":0}\n{\"Time\":\"2026-11-21T03:52:25.612455715Z\",\"Action\":\"output\",\"Package\":\"opencsg.com/csghub-server/aigateway/component\",\"Output\":\"FAIL\\topencsg.com/csghub-server/aigateway/component\\t0.060s\\n\"}\n{\"Time\":\"2026-11-21T03:52:25.612467346Z\",\"Action\":\"fail\",\"Package\":\"opencsg.com/csghub-server/aigateway/component\",\"Elapsed\":0.06}\n",
+  "cmd": "go -C . test -count=1 -json ./aigateway/component",
+  "base": "f01482d880c7"
+ },
+ {
+  "repo": "labring/aiproxy",
+  "number": 695,
+  "lang": "Go",
+  "title": "fix(claude): report upstream content blocks as refusals",
+  "url": "https://github.com/labring/aiproxy/pull/695",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 146,
+   "failed": 8,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 146,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 256.6,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C core test -count=1 -json ./relay/adaptor/gemini",
+  "base": "c78ba3fa64ba"
+ },
+ {
+  "repo": "micro/go-micro",
+  "number": 5012,
+  "lang": "Go",
+  "title": "Accept Anthropic streamed tool calls that have no arguments",
+  "url": "https://github.com/micro/go-micro/pull/5012",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 15,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 15,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 51.1,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./model/anthropic",
+  "base": "47bd65ffe5a0"
+ },
+ {
+  "repo": "Tencent/WeKnora",
+  "number": 4845,
+  "lang": "Go",
+  "title": "fix(chat): carry Ollama's done_reason on the final stream chunk",
+  "url": "https://github.com/Tencent/WeKnora/pull/4845",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 1",
+  "before": {
+   "rc": 1,
+   "ran": 22,
+   "failed": 3,
+   "errored": false,
+   "why": "FAIL | FAIL\tgithub.com/Tencent/WeKnora/internal/models/chat\t0.646s"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 22,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 28.7,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./internal/models/chat",
+  "base": "dacb9c2643bd"
+ },
+ {
+  "repo": "securego/gosec",
+  "number": 1791,
+  "lang": "Go",
+  "title": "fix(autofix): return an error when a Gemini candidate has no content",
+  "url": "https://github.com/securego/gosec/pull/1791",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 133,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 133,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 131.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./autofix",
+  "base": "14ef84f6fecc"
+ },
+ {
+  "repo": "NVIDIA/NVSentinel",
+  "number": 2274,
+  "lang": "Go",
+  "title": "fix(mongodb-store): make the create-mongodb-database Job deadline configurable",
+  "url": "https://github.com/NVIDIA/NVSentinel/pull/2274",
+  "outcome": "NO_RUNNER",
+  "resolved_by": "7 commits at the branch tip, line drift 0",
+  "seconds": 2.3,
+  "detail": "no runner for test files of type ['.yaml']",
+  "base": "5fa18dd976d0"
+ },
+ {
+  "repo": "projectdiscovery/urlfinder",
+  "number": 154,
+  "lang": "Go",
+  "title": "fix(agent): apply global rate limit without source overrides",
+  "url": "https://github.com/projectdiscovery/urlfinder/pull/154",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 9,
+   "failed": 5,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 9,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 34.8,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./pkg/agent",
+  "base": "d7f0fe9d5ad9"
+ },
+ {
+  "repo": "aandrew-me/tgpt",
+  "number": 540,
+  "lang": "Go",
+  "title": "fix(ollamacloud): enable and forward configured tools",
+  "url": "https://github.com/aandrew-me/tgpt/pull/540",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "2 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 6,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 6,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 2.2,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./src/providers/ollama",
+  "base": "1e5738e133aa"
+ },
+ {
+  "repo": "danielmiessler/Fabric",
+  "number": 2297,
+  "lang": "Go",
+  "title": "fix(claude): omit temperature and top_p for Claude models that reject them on Bedrock gateway and Vertex AI",
+  "url": "https://github.com/danielmiessler/Fabric/pull/2297",
+  "outcome": "REPRODUCED",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "upstream default branch, 8 commits before the merge",
+  "before": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true,
+   "why": "# github.com/danielmiessler/fabric/internal/plugins/ai/anthropic [github.com/danielmiessler/fabric/internal/plugins/ai/anthropic.test] | internal/plugins/ai/anthropic/anthropic_sampling_test.go:17:5: undefined: SetSamplingParams | internal/plugins/ai/anthropic/anthropic_sampling_test.go:28:2: undefined: SetSamplingParams | internal/plugins/ai/anthropic/anthropic_sampling_test.go:33:2: undefined: SetSamplingParams | F"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 26,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 86.8,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./internal/plugins/ai/anthropic",
+  "base": "58ed8634f1cd"
+ },
+ {
+  "repo": "nextlevelbuilder/goclaw",
+  "number": 1677,
+  "lang": "Go",
+  "title": "fix(cron): honor 'due' run mode in the PG and SQLite stores",
+  "url": "https://github.com/nextlevelbuilder/goclaw/pull/1677",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "3 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 177,
+   "failed": 4,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 177,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 128.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./internal/gateway/methods",
+  "base": "7b87c4401d19"
+ },
+ {
+  "repo": "aws/aws-network-policy-agent",
+  "number": 798,
+  "lang": "Go",
+  "title": "fix(events): avoid panic when CloudWatch stream creation fails",
+  "url": "https://github.com/aws/aws-network-policy-agent/pull/798",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 1,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 5,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 172.7,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./pkg/ebpf/events",
+  "base": "66764cb7b7ca"
+ },
+ {
+  "repo": "aandrew-me/tgpt",
+  "number": 531,
+  "lang": "Go",
+  "title": "fix(minimax): send tools to the MiniMax provider",
+  "url": "https://github.com/aandrew-me/tgpt/pull/531",
+  "outcome": "REPRODUCED",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true
+  },
+  "after": {
+   "rc": 0,
+   "ran": 17,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 5.0,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./src/providers/minimax",
+  "base": "07f1b20edcbe"
+ },
+ {
+  "repo": "grafana/sigma-rule-deployment",
+  "number": 460,
+  "lang": "Go",
+  "title": "fix(deploy): escape rule group names in the provisioning URL",
+  "url": "https://github.com/grafana/sigma-rule-deployment/pull/460",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 97,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 97,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 50.7,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./internal/deploy",
+  "base": "a1a6cd7db6c7"
+ },
+ {
+  "repo": "lich0821/ccNexus",
+  "number": 151,
+  "lang": "Go",
+  "title": "fix: give parallel Gemini tool calls distinct tool_use ids",
+  "url": "https://github.com/lich0821/ccNexus/pull/151",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 41,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 41,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 43.1,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./internal/transformer/convert",
+  "base": "42d22642007f"
+ },
+ {
+  "repo": "NVIDIA/NVSentinel",
+  "number": 2328,
+  "lang": "Go",
+  "title": "fix(metadata-collector): grant fine-grained kubelet pod access",
+  "url": "https://github.com/NVIDIA/NVSentinel/pull/2328",
+  "outcome": "NO_RUNNER",
+  "resolved_by": "2 commits at the branch tip, line drift 0",
+  "seconds": 2.2,
+  "detail": "no runner for test files of type ['.yaml']",
+  "base": "f816176c89ad"
+ },
+ {
+  "repo": "looplj/axonhub",
+  "number": 2892,
+  "lang": "Go",
+  "title": "fix(anthropic): map content_filter finish reason to refusal stop reason",
+  "url": "https://github.com/looplj/axonhub/pull/2892",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 665,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 665,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 92.4,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C llm test -count=1 -json ./transformer/anthropic",
+  "base": "d1395b266b4f"
+ },
+ {
+  "repo": "kagent-dev/kagent",
+  "number": 3568,
+  "lang": "Go",
+  "title": "fix(go/adk): emit Anthropic streaming tool calls in block order",
+  "url": "https://github.com/kagent-dev/kagent/pull/3568",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 372,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 372,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 215.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C go test -count=1 -json ./adk/pkg/models",
+  "base": "ccb2dd350e06"
+ },
+ {
+  "repo": "cloudposse/atmos",
+  "number": 3616,
+  "lang": "Go",
+  "title": "fix(list): escape CSV/TSV cells in list vendor output",
+  "url": "https://github.com/cloudposse/atmos/pull/3616",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 473,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 546,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 493.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./pkg/list",
+  "base": "2f79eb06774d"
+ },
+ {
+  "repo": "lich0821/ccNexus",
+  "number": 144,
+  "lang": "Go",
+  "title": "fix: replace retired default Claude and Gemini models",
+  "url": "https://github.com/lich0821/ccNexus/pull/144",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 46,
+   "failed": 1,
+   "errored": false,
+   "why": "FAIL | FAIL\tgithub.com/lich0821/ccNexus/internal/proxy\t1.588s"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 46,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 32.9,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./internal/proxy",
+  "base": "8fd3ebb88497"
+ },
+ {
+  "repo": "stackql/stackql",
+  "number": 905,
+  "lang": "Go",
+  "title": "fix(output): flush CSV rows already written when the result stream fails",
+  "url": "https://github.com/stackql/stackql/pull/905",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "2 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 19,
+   "failed": 1,
+   "errored": false,
+   "why": "FAIL | FAIL\tgithub.com/stackql/stackql/internal/stackql/output\t0.044s"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 19,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 44.1,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./internal/stackql/output",
+  "base": "4c447cf76e0f"
+ },
+ {
+  "repo": "k8sgpt-ai/k8sgpt",
+  "number": 1927,
+  "lang": "Go",
+  "title": "fix: honor label selector in Storage analyzer StorageClass and PV lists",
+  "url": "https://github.com/k8sgpt-ai/k8sgpt/pull/1927",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 332,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 332,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 301.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./pkg/analyzer",
+  "base": "5e79d6bd8355"
+ },
+ {
+  "repo": "henrygd/beszel",
+  "number": 2778,
+  "lang": "Go",
+  "title": "fix(agent): read swap from SwapMemory on macOS",
+  "url": "https://github.com/henrygd/beszel/pull/2778",
+  "outcome": "REPRODUCED",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true,
+   "why": "FAIL\tgithub.com/henrygd/beszel/agent [build failed]"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 147,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 7.4,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./agent",
+  "base": "9760e6ec524e"
+ },
+ {
+  "repo": "OpenCSGs/csghub-server",
+  "number": 1626,
+  "lang": "Go",
+  "title": "fix(aigateway): accept delta.reasoning in Messages stream adapter",
+  "url": "https://github.com/OpenCSGs/csghub-server/pull/1626",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 203,
+   "failed": 2,
+   "errored": false,
+   "why": "FAIL | FAIL\topencsg.com/csghub-server/aigateway/handler/anthropic\t0.195s"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 203,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 31.2,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./aigateway/handler/anthropic",
+  "base": "9df8bf6d3135"
+ },
+ {
+  "repo": "pipecat-ai/pipecat",
+  "number": 6283,
+  "lang": "Python",
+  "title": "fix: keep the detail after an exception name in redact_secrets",
+  "url": "https://github.com/pipecat-ai/pipecat/pull/6283",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "recorded patches, base 3 commits below the tip",
+  "before": {
+   "rc": 1,
+   "ran": 59,
+   "failed": 8,
+   "errored": false,
+   "why": "AssertionError: \"KeyError: '[REDACTED]'\" != \"KeyError: 'audio_content'\" - KeyError: '[REDACTED]' + KeyError: 'audio_content' self = <tests.test_redaction.TestRedactSecrets testMethod=test_keeps_the_detail_after_an_exception_name_holding_a_credential_word> def test_keeps_the_detail_after_an_exception_name_holding_a_credential_word(self): for message in ( \"KeyError: 'audio_content'\", \"InvalidTokenError: signature has e"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 59,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 58.1,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd <workdir>/pipecat-ai__pipecat-6283 && <workdir>/pipecat-ai__pipecat-6283/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.pipecat-ai__pipecat-6283-result tests/test_redaction.py",
+  "base": "32d63cb97de2"
+ },
+ {
+  "repo": "ag2ai/ag2",
+  "number": 3608,
+  "lang": "Python",
+  "title": "fix(mcp): read path-like MCP app documents as UTF-8",
+  "url": "https://github.com/ag2ai/ag2/pull/3608",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "upstream default branch, 1 commits before the merge",
+  "before": {
+   "rc": 5,
+   "ran": 0,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "after": {
+   "rc": 5,
+   "ran": 0,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 45.8,
+  "detail": "no test ran after the fix either: t loop scope for asynchronous fixtures will default to the fixture scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to \"function\" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\". Set it to \"fixture-scope\" to keep the current behavior.\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n",
+  "cmd": "sh -c cd <workdir>/ag2ai__ag2-3608 && <workdir>/ag2ai__ag2-3608/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.ag2ai__ag2-3608-result test/mcp/test_apps.py",
+  "base": "d97433188e4e"
+ },
+ {
+  "repo": "GoogleCloudPlatform/k8s-config-connector",
+  "number": 15609,
+  "lang": "Go",
+  "title": "fix(redis): keep RedisCluster endpoints when spec.clusterEndpoints is unset",
+  "url": "https://github.com/GoogleCloudPlatform/k8s-config-connector/pull/15609",
+  "outcome": "NO_RUNNER",
+  "resolved_by": "recorded patches, base 5 commits below the tip",
+  "seconds": 37.3,
+  "detail": "no runner for test files of type ['.log']",
+  "base": "ee0ae90bde4a"
+ },
+ {
+  "repo": "cisco-ai-defense/skill-scanner",
+  "number": 275,
+  "lang": "Python",
+  "title": "fix(llm): replace retired openrouter and vertex default models",
+  "url": "https://github.com/cisco-ai-defense/skill-scanner/pull/275",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 17,
+   "failed": 1,
+   "errored": false,
+   "why": "AssertionError: assert 'openrouter/openai/gpt-4' == 'openrouter/o...i/gpt-5.6-sol' - openrouter/openai/gpt-5.6-sol ? ^^^^^^^ + openrouter/openai/gpt-4 ? ^ tests/test_llm_analyzer.py:219: in test_openrouter_provider_default_model_is_not_retired assert analyzer.model == \"openrouter/openai/gpt-5.6-sol\" E AssertionError: assert 'openrouter/openai/gpt-4' == 'openrouter/o...i/gpt-5.6-sol' E E - openrouter/openai/gpt-5.6-so"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 115,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 50.7,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "<workdir>/cisco-ai-defense__skill-scanner-275/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.cisco-ai-defense__skill-scanner-275-result tests/test_llm_analyzer.py",
+  "base": "8554b119bd11"
+ },
+ {
+  "repo": "posit-dev/chatlas",
+  "number": 479,
+  "lang": "Python",
+  "title": "fix(ollama): allow ChatOllama() without a model so list_models() works",
+  "url": "https://github.com/posit-dev/chatlas/pull/479",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 14,
+   "failed": 2,
+   "errored": false,
+   "why": "ValueError: Must specify model. Available models: qwen3:4b, llama3.2 monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc1ffdf44d0> def test_ollama_model_none_can_list_models(monkeypatch): monkeypatch.setattr(\"chatlas._provider_ollama.has_ollama\", lambda base_url: True) monkeypatch.setattr( \"chatlas._provider_ollama.ollama_model_info\", lambda base_url: _MODELS ) > chat = ChatOllama(base_url=\"http://localhos"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 14,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 35.3,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "<workdir>/posit-dev__chatlas-479/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.posit-dev__chatlas-479-result tests/test_provider_ollama.py",
+  "base": "22208b180762"
+ },
+ {
+  "repo": "zhayujie/CowAgent",
+  "number": 3974,
+  "lang": "Python",
+  "title": "fix(modelscope): send the agent system prompt in call_with_tools",
+  "url": "https://github.com/zhayujie/CowAgent/pull/3974",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 4,
+   "failed": 2,
+   "errored": false,
+   "why": "AssertionError: assert [{'role': 'us...nt': 'hello'}] == [{'role': 'sy...nt': 'hello'}] At index 0 diff: {'role': 'user', 'content': 'hello'} != {'role': 'system', 'content': 'You are a cat.'} Right contains one more item: {'role': 'user', 'content': 'hello'} Use -v to get more diff def test_system_prompt_is_prepended_to_messages(): user = {\"role\": \"user\", \"content\": \"hello\"} sent, args = _sent(_bot(), [user], system"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 4,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 5.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "<workdir>/zhayujie__CowAgent-3974/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.zhayujie__CowAgent-3974-result tests/test_modelscope_agent_system_prompt.py",
+  "base": "fd75a33d862f"
+ },
+ {
+  "repo": "livekit/agents",
+  "number": 8081,
+  "lang": "Python",
+  "title": "fix(google): default the LLM to gemini-3.8-flash",
+  "url": "https://github.com/livekit/agents/pull/8081",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 40,
+   "failed": 1,
+   "errored": false,
+   "why": "AssertionError: assert 'gemini-2.5-flash' not in {'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.5-flash', 'gemini-2.5-pro'} + where 'gemini-2.5-flash' = <livekit.plugins.google.llm.LLM object at 0x7f9ab1cd6950>.model + where <livekit.plugins.google.llm.LLM object at 0x7f9ab1cd6950> = LLM(api_key='test-key') def test_default_model_is_not_a_retired_one(): # gemini-2.5-* stopped being served on Vertex AI on 2026"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 40,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 51.2,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd <workdir>/livekit__agents-8081 && <workdir>/livekit__agents-8081/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.livekit__agents-8081-result tests/test_plugin_google_llm.py",
+  "base": "6f55d101b254"
+ },
+ {
+  "repo": "securego/gosec",
+  "number": 1829,
+  "lang": "Go",
+  "title": "fix(autofix): pass unlisted claude-* models through to the API",
+  "url": "https://github.com/securego/gosec/pull/1829",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 1",
+  "before": {
+   "rc": 1,
+   "ran": 140,
+   "failed": 2,
+   "errored": false,
+   "why": "FAIL | FAIL\tgithub.com/securego/gosec/v2/autofix\t4.706s"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 140,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 81.7,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./autofix",
+  "base": "6d98968a868f"
+ },
+ {
+  "repo": "posit-dev/pointblank",
+  "number": 487,
+  "lang": "Python",
+  "title": "fix: treat NaN as missing in col_vals_not_in_set() on Polars and PyArrow",
+  "url": "https://github.com/posit-dev/pointblank/pull/487",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "error",
+  "resolved_by": "upstream default branch, 1 commits before the merge",
+  "before": {
+   "rc": 2,
+   "ran": 1,
+   "failed": 0,
+   "errored": true,
+   "why": "collection failure ImportError while importing test module '<workdir>/posit-dev__pointblank-487/tests/test_missing_nan_values.py'. Hint: make sure your test modules/packages have valid Python names. Traceback: /root/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module return _bootstra",
+   "healed": [
+    "pandas"
+   ]
+  },
+  "after": {
+   "rc": 2,
+   "ran": 1,
+   "failed": 0,
+   "errored": true,
+   "why": "collection failure ImportError while importing test module '<workdir>/posit-dev__pointblank-487/tests/test_missing_nan_values.py'. Hint: make sure your test modules/packages have valid Python names. Traceback: /root/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module return _bootstra"
+  },
+  "seconds": 45.1,
+  "detail": "no test ran after the fix either: collection failure ImportError while importing test module '<workdir>/posit-dev__pointblank-487/tests/test_missing_nan_values.py'. Hint: make sure your test modules/packages have valid Python names. Traceback: /root/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module return _bootstra",
+  "cmd": "sh -c cd <workdir>/posit-dev__pointblank-487 && <workdir>/posit-dev__pointblank-487/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.posit-dev__pointblank-487-result tests/test_missing_nan_values.py",
+  "base": "2517961325dc"
+ },
+ {
+  "repo": "dynamiq-ai/dynamiq",
+  "number": 1111,
+  "lang": "Python",
+  "title": "fix(rankers): honor top_k in LLMDocumentRanker",
+  "url": "https://github.com/dynamiq-ai/dynamiq/pull/1111",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "2 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 2,
+   "failed": 1,
+   "errored": false,
+   "why": "AssertionError: assert ['doc 0', 'do...c 4', 'doc 5'] == ['doc 0', 'doc 1'] Left contains 4 more items, first extra item: 'doc 2' Use -v to get more diff def test_llm_ranker_respects_top_k(): documents = [Document(content=f\"doc {i}\") for i in range(6)] ranker = _ranker(top_k=2) with patch.object(LLMDocumentRanker, \"call_llm\", return_value=\"Yes\"): result = ranker.perform_llm_ranking(\"query\", documents, RunnableConfig(",
+   "healed": [
+    "fakeredis"
+   ]
+  },
+  "after": {
+   "rc": 0,
+   "ran": 2,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 61.6,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd <workdir>/dynamiq-ai__dynamiq-1111 && <workdir>/dynamiq-ai__dynamiq-1111/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.dynamiq-ai__dynamiq-1111-result tests/unit/nodes/rankers/test_llm_ranker.py",
+  "base": "6d9a025e9a21"
+ },
+ {
+  "repo": "StarTrail-org/LEANN",
+  "number": 454,
+  "lang": "Python",
+  "title": "fix(chat): default the Anthropic factory model to claude-haiku-4-5",
+  "url": "https://github.com/StarTrail-org/LEANN/pull/454",
+  "outcome": "SETUP_FAIL",
+  "resolved_by": "3 commits at the branch tip, line drift 0",
+  "seconds": 2.9,
+  "detail": "-454/packages/astchunk-leann\n      does not appear to be a Python project, as neither `pyproject.toml` nor\n      `setup.py` are present in the directory\n\n  \u00d7 Failed to build `astchunk @\n  \u2502 file://<workdir>/StarTrail-org__LEANN-454/packages/astchunk-leann`\n  \u2570\u2500\u25b6 <workdir>/StarTrail-org__LEANN-454/packages/astchunk-leann\n      does not appear to be a Python project, as neither `pyproject.toml` nor\n      `setup.py` are present in the directory\n",
+  "base": "c443fc418417"
+ },
+ {
+  "repo": "assafelovic/gpt-researcher",
+  "number": 2217,
+  "lang": "Python",
+  "title": "fix: don't send temperature to Claude models that reject it",
+  "url": "https://github.com/assafelovic/gpt-researcher/pull/2217",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 11,
+   "failed": 10,
+   "errored": false,
+   "why": "assert 0.4 is None monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f48d48e0890> model = 'claude-opus-4-8' @pytest.mark.asyncio @pytest.mark.parametrize( \"model\", [ \"claude-opus-4-8\", \"claude-opus-5\", \"claude-opus-5-5\", \"claude-sonnet-5\", \"claude-sonnet-5-5\", \"claude-haiku-5-5\", \"claude-fable-5-1\", \"anthropic.claude-opus-5-5\", \"us.anthropic.claude-opus-4-7-v1:0\", \"anthropic/claude-sonnet-5\", ], ) async def"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 11,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 21.1,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "<workdir>/assafelovic__gpt-researcher-2217/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.assafelovic__gpt-researcher-2217-result tests/test_claude_temperature.py",
+  "base": "3582a6841fe7"
+ },
+ {
+  "repo": "aws-cloudformation/cfn-lint",
+  "number": 4927,
+  "lang": "Python",
+  "title": "fix(E3530): accept sts root and federated-user principals",
+  "url": "https://github.com/aws-cloudformation/cfn-lint/pull/4927",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 13,
+   "failed": 3,
+   "errored": false,
+   "why": "AssertionError: Lists differ: [<ValidationError: \"'arn:aws:sts::12345678[52 chars]as\">] != [] First list contains 1 additional elements. First extra element 0: <ValidationError: \"'arn:aws:sts::123456789012:root' is not valid under any of the given schemas\"> - [<ValidationError: \"'arn:aws:sts::123456789012:root' is not valid under any of the given schemas\">] + [] self = <test.unit.rules.resources.iam.test_trust_policy"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 13,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 14.0,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "<workdir>/aws-cloudformation__cfn-lint-4927/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.aws-cloudformation__cfn-lint-4927-result test/unit/rules/resources/iam/test_trust_policy.py",
+  "base": "f302ad028c71"
+ },
+ {
+  "repo": "EverMind-AI/Raven",
+  "number": 1196,
+  "lang": "Python",
+  "title": "fix(proactive_engine): keep cron without tz on local DST rules",
+  "url": "https://github.com/EverMind-AI/Raven/pull/1196",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "4 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 28,
+   "failed": 12,
+   "errored": false,
+   "why": "assert 1805032800000 == 1805029200000 + where 1805029200000 = int((1805029200.0 * 1000)) + where 1805029200.0 = <built-in method timestamp of datetime.datetime object at 0x7fa4b1918e40>() + where <built-in method timestamp of datetime.datetime object at 0x7fa4b1918e40> = datetime.datetime(2027, 3, 14, 13, 0, tzinfo=datetime.timezone.utc).timestamp monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fa4b1a57bd"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 28,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 55.1,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd <workdir>/EverMind-AI__Raven-1196 && <workdir>/EverMind-AI__Raven-1196/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.EverMind-AI__Raven-1196-result tests/test_cron_service_validation.py",
+  "base": "8448cc628092"
+ },
+ {
+  "repo": "tox-dev/tox",
+  "number": 4173,
+  "lang": "Python",
+  "title": "\ud83d\udc1b fix(pylock): use default-groups when no dependency group is selected",
+  "url": "https://github.com/tox-dev/tox/pull/4173",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "recorded patches, base 4 commits below the tip",
+  "before": {
+   "rc": 3,
+   "ran": 0,
+   "failed": 0,
+   "errored": true
+  },
+  "after": {
+   "rc": 3,
+   "ran": 0,
+   "failed": 0,
+   "errored": true
+  },
+  "seconds": 11.0,
+  "detail": "no test ran after the fix either: Cannot read termcap database;\nusing dumb terminal settings.\nError while loading plugin \"tox.pytest\".\nsrc/tox/pytest.py:20: in <module>\n    from devpi_process import IndexServer\nE   ModuleNotFoundError: No module named 'devpi_process'\n",
+  "cmd": "sh -c cd <workdir>/tox-dev__tox-4173 && <workdir>/tox-dev__tox-4173/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.tox-dev__tox-4173-result tests/tox_env/python/test_pylock.py",
+  "base": "1de497f9f207"
+ },
+ {
+  "repo": "i-am-bee/beeai-framework",
+  "number": 1906,
+  "lang": "Python",
+  "title": "fix(adapters): report cached token usage in the LangChain chat adapter",
+  "url": "https://github.com/i-am-bee/beeai-framework/pull/1906",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "2 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 5,
+   "failed": 2,
+   "errored": false,
+   "why": "assert 0 == 60 + where 0 = ChatModelUsage(prompt_tokens=100, completion_tokens=10, total_tokens=110, cached_prompt_tokens=0, cached_creation_tokens=0).cached_prompt_tokens [+1 more line; full report in element text] @pytest.mark.unit def test_transform_output_reports_cached_tokens() -> None: model = LangChainChatModel(GenericFakeChatModel(messages=iter([]))) message = AIMessage( content=\"hi\", usage_metadata={ \"input_"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 5,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 121.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd <workdir>/i-am-bee__beeai-framework-1906/python && <workdir>/i-am-bee__beeai-framework-1906/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.i-am-bee__beeai-framework-1906-result tests/adapters/langchain/test_chat.py",
+  "base": "db19dd6bb06e"
+ },
+ {
+  "repo": "sligter/LandPPT",
+  "number": 137,
+  "lang": "Python",
+  "title": "fix(anthropic): omit temperature for Claude 4.7 and later models",
+  "url": "https://github.com/sligter/LandPPT/pull/137",
+  "outcome": "SETUP_FAIL",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "seconds": 53.8,
+  "detail": "error (Connect)\n  Caused by: tunnel error: unsuccessful\n\nerror: Request failed after 3 retries in 4.8s\n  Caused by: Failed to fetch: `https://pypi.apryse.com/apryse-sdk/`\n  Caused by: error sending request for url (https://pypi.apryse.com/apryse-sdk/)\n  Caused by: client error (Connect)\n  Caused by: tunnel error: unsuccessful\n\nerror: Request failed after 3 retries in 4.7s\n  Caused by: Failed to fetch: `https://pypi.apryse.com/playwright/`\n  Caused by: error sending request for url (https://pypi.apryse.com/playwright/)\n  Caused by: client error (Connect)\n  Caused by: tunnel error: unsuccessful\n",
+  "base": "7fd098103880"
+ },
+ {
+  "repo": "i-am-bee/beeai-framework",
+  "number": 1878,
+  "lang": "Python",
+  "title": "fix(python): don't send the implicit temperature=0 to Anthropic next to top_p or reasoning_effort",
+  "url": "https://github.com/i-am-bee/beeai-framework/pull/1878",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 35,
+   "failed": 2,
+   "errored": false,
+   "why": "AssertionError: assert 'temperature' not in {'api_key': 'test', 'temperature': 0.0, 'reasoning_effort': 'low', 'extra_headers': {}, ...} self = <test_litellm_chat.TestAnthropicImplicitTemperature object at 0x7ff33d22dfd0> @pytest.mark.unit @pytest.mark.asyncio async def test_reasoning_effort_drops_the_implicit_temperature(self) -> None: captured = await self._captured_request(reasoning_effort=\"low\") > assert \"tempera"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 35,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 41.2,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd <workdir>/i-am-bee__beeai-framework-1878/python && <workdir>/i-am-bee__beeai-framework-1878/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.i-am-bee__beeai-framework-1878-result tests/backend/providers/test_litellm_chat.py",
+  "base": "4b68aabf5e35"
+ },
+ {
+  "repo": "posit-dev/great-tables",
+  "number": 1013,
+  "lang": "Python",
+  "title": "fix: let fmt_nanoplot() draw PyArrow float64 and Decimal columns",
+  "url": "https://github.com/posit-dev/great-tables/pull/1013",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "error",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 2,
+   "ran": 1,
+   "failed": 0,
+   "errored": true,
+   "why": "collection failure ImportError while importing test module '<workdir>/posit-dev__great-tables-1013/tests/test_formats_nanoplots.py'. Hint: make sure your test modules/packages have valid Python names. Traceback: /root/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module return _bootst"
+  },
+  "after": {
+   "rc": 2,
+   "ran": 1,
+   "failed": 0,
+   "errored": true,
+   "why": "collection failure ImportError while importing test module '<workdir>/posit-dev__great-tables-1013/tests/test_formats_nanoplots.py'. Hint: make sure your test modules/packages have valid Python names. Traceback: /root/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module return _bootst"
+  },
+  "seconds": 14.6,
+  "detail": "no test ran after the fix either: collection failure ImportError while importing test module '<workdir>/posit-dev__great-tables-1013/tests/test_formats_nanoplots.py'. Hint: make sure your test modules/packages have valid Python names. Traceback: /root/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module return _bootst",
+  "cmd": "sh -c cd <workdir>/posit-dev__great-tables-1013 && <workdir>/posit-dev__great-tables-1013/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.posit-dev__great-tables-1013-result tests/test_formats_nanoplots.py",
+  "base": "e364befb7002"
+ },
+ {
+  "repo": "mozilla-ai/any-llm",
+  "number": 1602,
+  "lang": "Python",
+  "title": "fix: preserve tool-use stop reasons in messages compatibility",
+  "url": "https://github.com/mozilla-ai/any-llm/pull/1602",
+  "outcome": "TIMEOUT",
+  "resolved_by": "3 commits at the branch tip, line drift 0",
+  "seconds": 617.2,
+  "detail": "test run before the fix timed out",
+  "cmd": "sh -c cd <workdir>/mozilla-ai__any-llm-1602 && <workdir>/mozilla-ai__any-llm-1602/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.mozilla-ai__any-llm-1602-result tests/integration/test_messages.py",
+  "base": "1cdd58749c50"
+ },
+ {
+  "repo": "truera/trulens",
+  "number": 2975,
+  "lang": "Python",
+  "title": "fix(providers/google): default to gemini-3.8-flash",
+  "url": "https://github.com/truera/trulens/pull/2975",
+  "outcome": "RUNNER_ERROR",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 0,
+   "ran": 0,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 6.0,
+  "detail": "exit 0 but no test ran at base",
+  "cmd": "sh -c cd <workdir>/truera__trulens-2975 && <workdir>/truera__trulens-2975/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.truera__trulens-2975-result tests/unit/providers/test_google_capabilities.py",
+  "base": "a7f242b4dcea"
+ },
+ {
+  "repo": "posit-dev/pointblank",
+  "number": 471,
+  "lang": "Python",
+  "title": "fix(ai): find the JSON array when the LLM reply has brackets before it",
+  "url": "https://github.com/posit-dev/pointblank/pull/471",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "error",
+  "resolved_by": "3 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 2,
+   "ran": 1,
+   "failed": 0,
+   "errored": true,
+   "why": "collection failure ImportError while importing test module '<workdir>/posit-dev__pointblank-471/tests/test__utils_ai.py'. Hint: make sure your test modules/packages have valid Python names. Traceback: /root/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module return _bootstrap._gcd_im",
+   "healed": [
+    "pandas"
+   ]
+  },
+  "after": {
+   "rc": 2,
+   "ran": 1,
+   "failed": 0,
+   "errored": true,
+   "why": "collection failure ImportError while importing test module '<workdir>/posit-dev__pointblank-471/tests/test__utils_ai.py'. Hint: make sure your test modules/packages have valid Python names. Traceback: /root/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module return _bootstrap._gcd_im"
+  },
+  "seconds": 70.4,
+  "detail": "no test ran after the fix either: collection failure ImportError while importing test module '<workdir>/posit-dev__pointblank-471/tests/test__utils_ai.py'. Hint: make sure your test modules/packages have valid Python names. Traceback: /root/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module return _bootstrap._gcd_im",
+  "cmd": "sh -c cd <workdir>/posit-dev__pointblank-471 && <workdir>/posit-dev__pointblank-471/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.posit-dev__pointblank-471-result tests/test__utils_ai.py",
+  "base": "90d9451c9dfa"
+ },
+ {
+  "repo": "Abilityai/trinity",
+  "number": 4593,
+  "lang": "Python",
+  "title": "fix(queue-stall): clear the stall alert with a reason the platform accepts (#4578)",
+  "url": "https://github.com/Abilityai/trinity/pull/4593",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 4,
+   "ran": 0,
+   "failed": 0,
+   "errored": true,
+   "healed": [
+    "httpcore",
+    "pydantic",
+    "sqlalchemy"
+   ]
+  },
+  "after": {
+   "rc": 4,
+   "ran": 0,
+   "failed": 0,
+   "errored": true
+  },
+  "seconds": 13.8,
+  "detail": "no test ran after the fix either: ernal/_generate_schema.py:1058: in _generate_schema_from_get_schema_method\n    schema = get_schema(\n.venv/lib/python3.12/site-packages/pydantic/networks.py:1080: in __get_pydantic_core_schema__\n    import_email_validator()\n.venv/lib/python3.12/site-packages/pydantic/networks.py:1042: in import_email_validator\n    raise ImportError(\"email-validator is not installed, run `pip install 'pydantic[email]'`\") from e\nE   ImportError: email-validator is not installed, run `pip install 'pydantic[email]'`\n",
+  "cmd": "sh -c cd <workdir>/Abilityai__trinity-4593 && <workdir>/Abilityai__trinity-4593/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.Abilityai__trinity-4593-result tests/unit/test_4257_queue_stall_monitor.py",
+  "base": "c2898b09e513"
+ },
+ {
+  "repo": "PostHog/posthog-python",
+  "number": 1188,
+  "lang": "Python",
+  "title": "fix(ai): record the HTTP status of streaming google-genai errors",
+  "url": "https://github.com/PostHog/posthog-python/pull/1188",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 12,
+   "failed": 2,
+   "errored": false,
+   "why": "assert 0 == 429 mock_client = <MagicMock name='Client' id='140675940241424'> cls_name = 'ClientError', code = 429 @pytest.mark.parametrize( (\"cls_name\", \"code\"), [(\"ClientError\", 429), (\"ServerError\", 503)] ) def test_capture_streaming_event_records_google_genai_error_status( mock_client, cls_name, code ): errors = pytest.importorskip(\"google.genai.errors\") error = getattr(errors, cls_name)( code, {\"error\": {\"code\": "
+  },
+  "after": {
+   "rc": 0,
+   "ran": 12,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 32.6,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "<workdir>/PostHog__posthog-python-1188/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.PostHog__posthog-python-1188-result posthog/test/ai/test_stream_midstream_error.py",
+  "base": "db52a785f2d4"
+ },
+ {
+  "repo": "cisco-ai-defense/skill-scanner",
+  "number": 287,
+  "lang": "Python",
+  "title": "fix(behavioral): replace retired gemini-2.0-flash default in the alignment analyzer",
+  "url": "https://github.com/cisco-ai-defense/skill-scanner/pull/287",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 1,
+   "failed": 1,
+   "errored": false,
+   "why": "AssertionError: assert 'gemini/gemini-2.0-flash' == 'gemini/gemini-3.8-flash' - gemini/gemini-3.8-flash ? ^ ^ + gemini/gemini-2.0-flash ? ^ ^ tests/behavioral/test_default_models.py:28: in test_alignment_default_model_is_current assert default == EXPECTED_DEFAULT E AssertionError: assert 'gemini/gemini-2.0-flash' == 'gemini/gemini-3.8-flash' E E - gemini/gemini-3.8-flash E ? ^ ^ E + gemini/gemini-2.0-flash E ? ^ ^"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 4,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 48.3,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "<workdir>/cisco-ai-defense__skill-scanner-287/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.cisco-ai-defense__skill-scanner-287-result tests/behavioral/test_default_models.py",
+  "base": "f7824651ffeb"
+ },
+ {
+  "repo": "fim-ai/fim-one",
+  "number": 71,
+  "lang": "Python",
+  "title": "fix(model): don't replay a partially streamed response on the fallback LLM",
+  "url": "https://github.com/fim-ai/fim-one/pull/71",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 35,
+   "failed": 1,
+   "errored": false,
+   "why": "Failed: DID NOT RAISE <class 'Exception'> self = <tests.test_fallback.TestFallbackStreamChat object at 0x7ffb8c1cbd50> async def test_no_fallback_after_primary_stream_started(self) -> None: \"\"\"An availability error after chunks were yielded must not replay on the fallback.\"\"\" error = _make_status_error(503) class _MidStreamFailure(FakeLLM): async def stream_chat(self, messages: Any, **kwargs: Any) -> AsyncIterator[St"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 35,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 41.3,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd <workdir>/fim-ai__fim-one-71 && <workdir>/fim-ai__fim-one-71/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.fim-ai__fim-one-71-result tests/test_fallback.py",
+  "base": "922606d20490"
+ },
+ {
+  "repo": "PostHog/posthog-python",
+  "number": 1144,
+  "lang": "Python",
+  "title": "fix(ai): handle None and NOT_GIVEN stream_options without mutating the caller's dict",
+  "url": "https://github.com/PostHog/posthog-python/pull/1144",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 81,
+   "failed": 6,
+   "errored": false,
+   "why": "TypeError: 'NoneType' object does not support item assignment mock_client = <MagicMock name='Client' id='140099367835632'> streaming_tool_call_chunks = [ChatCompletionChunk(id='chunk1', choices=[Choice(delta=ChoiceDelta(audio=None, content=None, function_call=None, refu...(completion_tokens=15, prompt_tokens=20, total_tokens=35, completion_tokens_details=None, prompt_tokens_details=None))] stream_options = None @pyte"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 81,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 17.4,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "<workdir>/PostHog__posthog-python-1144/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.PostHog__posthog-python-1144-result posthog/test/ai/openai/test_openai.py",
+  "base": "130f5a1e8508"
+ },
+ {
+  "repo": "AstrBotDevs/AstrBot",
+  "number": 11057,
+  "lang": "Python",
+  "title": "fix(anthropic): concatenate multiple text blocks in non-streaming responses",
+  "url": "https://github.com/AstrBotDevs/AstrBot/pull/11057",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 30,
+   "failed": 1,
+   "errored": false,
+   "why": "AssertionError: assert '42.' == 'Let me searc...answer is 42.' - Let me search. The answer is 42. + 42. @pytest.mark.asyncio async def test_query_concatenates_multiple_text_blocks(): provider = ProviderAnthropic( provider_config={ \"id\": \"anthropic-test\", \"type\": \"anthropic_chat_completion\", \"model\": \"claude-test\", \"key\": [\"test-key\"], }, provider_settings={}, ) class FakeMessages: async def create(self, **kwargs): re"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 30,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 41.9,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "<workdir>/AstrBotDevs__AstrBot-11057/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.AstrBotDevs__AstrBot-11057-result tests/test_anthropic_source.py",
+  "base": "3e7da5afd901"
+ },
+ {
+  "repo": "pydantic/logfire",
+  "number": 2636,
+  "lang": "Python",
+  "title": "Record audio responses and legacy function calls from OpenAI chat completions",
+  "url": "https://github.com/pydantic/logfire/pull/2636",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "4 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 89,
+   "failed": 4,
+   "errored": false,
+   "why": "AssertionError: assert {'role': 'ass...ason': 'stop'} == {'role': 'ass...ason': 'stop'} Omitting 2 identical items, use -vv to show Differing items: {'parts': []} != {'parts': [{'type': 'blob', 'content': 'UklGRg==', 'modality': 'audio'}]} Use -v to get more diff def test_convert_openai_response_audio() -> None: \"\"\"An audio response has no content: the audio is recorded as a blob part, with no text part made up from "
+  },
+  "after": {
+   "rc": 0,
+   "ran": 89,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 43.1,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd <workdir>/pydantic__logfire-2636 && <workdir>/pydantic__logfire-2636/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.pydantic__logfire-2636-result tests/otel_integrations/test_openai.py",
+  "base": "de4499f24af1"
+ },
+ {
+  "repo": "Mirascope/mirascope",
+  "number": 2923,
+  "lang": "Python",
+  "title": "fix(llm): raise when an OpenAI Responses stream ends with response.failed",
+  "url": "https://github.com/Mirascope/mirascope/pull/2923",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "2 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true
+  },
+  "after": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true
+  },
+  "seconds": 13.4,
+  "detail": "no test ran after the fix either: e:internal/modules/esm/resolve:772:81)\n    at moduleResolve (node:internal/modules/esm/resolve:859:18)\n    at defaultResolve (node:internal/modules/esm/resolve:989:11)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)\n    at ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)\n    at ModuleJob._link (node:internal/modules/esm/module_job:182:49) {\n  code: 'ERR_MODULE_NOT_FOUND'\n}\n\n\n\n",
+  "cmd": "sh -c cd typescript && npx -y vitest run --reporter=json --outputFile=<workdir>/.Mirascope__mirascope-2923-result src/llm/providers/openai/responses/decode-stream.test.ts",
+  "base": "72e2b9d788f3"
+ },
+ {
+  "repo": "i-am-bee/beeai-framework",
+  "number": 1884,
+  "lang": "Python",
+  "title": "fix(python): keep a whitespace-only last line buffered in LinePrefixParser",
+  "url": "https://github.com/i-am-bee/beeai-framework/pull/1884",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 30,
+   "failed": 8,
+   "errored": false,
+   "why": "beeai_framework.parsers.line_prefix.LinePrefixParserError: The generated output does not adhere to the schema. Node 'thought' is not an end node. chunks = ['Thought: a\\n', ' ', 'Final Answer: b'] @pytest.mark.asyncio @pytest.mark.unit @pytest.mark.parametrize( \"chunks\", [ [\"Thought: a\\n\", \" \", \"Final Answer: b\"], [\"Thought: a\\n\", \"\\t\", \"Final Answer: b\"], [\"Thought: a\", \"\\n\", \" \", \" \", \"Final Answer: b\"], [\"Thought: "
+  },
+  "after": {
+   "rc": 0,
+   "ran": 30,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 27.7,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd <workdir>/i-am-bee__beeai-framework-1884/python && <workdir>/i-am-bee__beeai-framework-1884/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.i-am-bee__beeai-framework-1884-result tests/parsers/line_prefix_test.py",
+  "base": "33b0f25ffd9c"
+ },
+ {
+  "repo": "bytedance/deer-flow",
+  "number": 8038,
+  "lang": "Python",
+  "title": "fix(agents): remove empty strings from user content",
+  "url": "https://github.com/bytedance/deer-flow/pull/8038",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "3 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 225,
+   "failed": 13,
+   "errored": false,
+   "why": "AssertionError: assert ['', {'image_... 'image_url'}] == [{'image_url'... 'image_url'}] At index 0 diff: '' != {'type': 'image_url', 'image_url': {'url': 'data:image/png;base64,AA=='}} Left contains one more item: {'image_url': {'url': 'data:image/png;base64,AA=='}, 'type': 'image_url'} Use -v to get more diff self = <test_input_sanitization_middleware.TestWrapModelCallSpecialCases object at 0x7f08954290d0> empty_ind"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 225,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 52.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd <workdir>/bytedance__deer-flow-8038/backend && <workdir>/bytedance__deer-flow-8038/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.bytedance__deer-flow-8038-result tests/test_input_sanitization_middleware.py",
+  "base": "2a9e7255a7c9"
+ },
+ {
+  "repo": "NPC-Worldwide/npcpy",
+  "number": 358,
+  "lang": "Python",
+  "title": "fix(litellm): forward top_k to providers that support it",
+  "url": "https://github.com/NPC-Worldwide/npcpy/pull/358",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 3,
+   "failed": 2,
+   "errored": false,
+   "why": "AssertionError: assert None == 7 + where None = <built-in method get of dict object at 0x7fb9ed2e7200>('top_k') + where <built-in method get of dict object at 0x7fb9ed2e7200> = {'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': 'hello'}], 'model': 'anthropic/claude-sonnet-4-5', 'api_key': 'k', 'stream': False}.get [+1 more line; full report in element text] monkeypatch = <_pytest.monkey"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 3,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 34.1,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "<workdir>/NPC-Worldwide__npcpy-358/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.NPC-Worldwide__npcpy-358-result tests/test_litellm_top_k.py",
+  "base": "11d9db953793"
+ },
+ {
+  "repo": "posit-dev/pointblank",
+  "number": 482,
+  "lang": "Python",
+  "title": "fix: let col_vals_within_spec() check Categorical and Enum columns on Polars",
+  "url": "https://github.com/posit-dev/pointblank/pull/482",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "error",
+  "resolved_by": "upstream default branch, 1 commits before the merge",
+  "before": {
+   "rc": 2,
+   "ran": 1,
+   "failed": 0,
+   "errored": true,
+   "why": "collection failure ImportError while importing test module '<workdir>/posit-dev__pointblank-482/tests/test_within_spec_categorical_columns.py'. Hint: make sure your test modules/packages have valid Python names. Traceback: /root/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module ret",
+   "healed": [
+    "pandas"
+   ]
+  },
+  "after": {
+   "rc": 2,
+   "ran": 1,
+   "failed": 0,
+   "errored": true,
+   "why": "collection failure ImportError while importing test module '<workdir>/posit-dev__pointblank-482/tests/test_within_spec_categorical_columns.py'. Hint: make sure your test modules/packages have valid Python names. Traceback: /root/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module ret"
+  },
+  "seconds": 78.3,
+  "detail": "no test ran after the fix either: collection failure ImportError while importing test module '<workdir>/posit-dev__pointblank-482/tests/test_within_spec_categorical_columns.py'. Hint: make sure your test modules/packages have valid Python names. Traceback: /root/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module ret",
+  "cmd": "sh -c cd <workdir>/posit-dev__pointblank-482 && <workdir>/posit-dev__pointblank-482/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.posit-dev__pointblank-482-result tests/test_within_spec_categorical_columns.py",
+  "base": "8a6979214ed8"
+ },
+ {
+  "repo": "Ericsson/codechecker",
+  "number": 5180,
+  "lang": "Python",
+  "title": "fix(gcc): use os.devnull for the analyzer output file",
+  "url": "https://github.com/Ericsson/codechecker/pull/5180",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "error",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 2,
+   "ran": 1,
+   "failed": 0,
+   "errored": true,
+   "why": "collection failure /root/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module return _bootstrap._gcd_import(name[level:], package, level) ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ <frozen importlib._bootstrap>:1387: in _gcd_import ??? <frozen importlib._bootstrap>:1360: in _find_and_load ??? <frozen importlib._bootstrap>:1310: in _find_and_load_unlo"
+  },
+  "after": {
+   "rc": 2,
+   "ran": 1,
+   "failed": 0,
+   "errored": true,
+   "why": "collection failure /root/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module return _bootstrap._gcd_import(name[level:], package, level) ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ <frozen importlib._bootstrap>:1387: in _gcd_import ??? <frozen importlib._bootstrap>:1360: in _find_and_load ??? <frozen importlib._bootstrap>:1310: in _find_and_load_unlo"
+  },
+  "seconds": 4.8,
+  "detail": "no test ran after the fix either: collection failure /root/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module return _bootstrap._gcd_import(name[level:], package, level) ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ <frozen importlib._bootstrap>:1387: in _gcd_import ??? <frozen importlib._bootstrap>:1360: in _find_and_load ??? <frozen importlib._bootstrap>:1310: in _find_and_load_unlo",
+  "cmd": "sh -c cd <workdir>/Ericsson__codechecker-5180 && <workdir>/Ericsson__codechecker-5180/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.Ericsson__codechecker-5180-result analyzer/tests/unit/test_analyzer_command.py",
+  "base": "bae448521871"
+ },
+ {
+  "repo": "deepset-ai/haystack",
+  "number": 13302,
+  "lang": "Python",
+  "title": "fix: raise when a streamed OpenAI Responses API response fails",
+  "url": "https://github.com/deepset-ai/haystack/pull/13302",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 37,
+   "failed": 2,
+   "errored": false,
+   "why": "Failed: DID NOT RAISE RuntimeError self = <generators.chat.test_openai_responses_conversion.TestConversionToStreamingChunks object at 0x7fcca8b86650> def test_convert_failed_response_raises(self) -> None: response = Response.model_construct( output=[], status=\"failed\", error=ResponseError(code=\"server_error\", message=\"The model failed to generate a response.\"), ) event = ResponseFailedEvent.model_construct(response=r"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 37,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 18.8,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "<workdir>/deepset-ai__haystack-13302/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.deepset-ai__haystack-13302-result test/components/generators/chat/test_openai_responses_conversion.py",
+  "base": "c6c46c67b7ab"
+ },
+ {
+  "repo": "pydantic/logfire",
+  "number": 2647,
+  "lang": "Python",
+  "title": "Record custom tool calls from OpenAI chat completions",
+  "url": "https://github.com/pydantic/logfire/pull/2647",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "2 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 87,
+   "failed": 2,
+   "errored": false,
+   "why": "assert {'role': 'ass... 'tool_calls'} == {'role': 'ass... 'tool_calls'} Omitting 2 identical items, use -vv to show Differing items: {'parts': [{'type': 'tool_call', 'id': 'call_1', 'name': 'weather', 'arguments': {'city': 'Paris'}}]} != {'parts': [{'type': 'tool_call', 'id': 'call_1', 'name': 'weather', 'arguments': {'city': 'Paris'}}, {'type': 'tool_ca... 'arguments': '*** Begin Patch'}, {'type': 'tool_call', 'id':"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 87,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 35.1,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd <workdir>/pydantic__logfire-2647 && <workdir>/pydantic__logfire-2647/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.pydantic__logfire-2647-result tests/otel_integrations/test_openai.py",
+  "base": "56c84554e69a"
+ },
+ {
+  "repo": "microsoft/PyRIT",
+  "number": 3933,
+  "lang": "Python",
+  "title": "FIX: show converter removal errors inside the open dialog",
+  "url": "https://github.com/microsoft/PyRIT/pull/3933",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true
+  },
+  "after": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true
+  },
+  "seconds": 10.7,
+  "detail": "no test ran after the fix either: e:internal/modules/esm/resolve:772:81)\n    at moduleResolve (node:internal/modules/esm/resolve:859:18)\n    at defaultResolve (node:internal/modules/esm/resolve:989:11)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)\n    at ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)\n    at ModuleJob._link (node:internal/modules/esm/module_job:182:49) {\n  code: 'ERR_MODULE_NOT_FOUND'\n}\n\n\n\n",
+  "cmd": "sh -c cd frontend && npx -y vitest run --reporter=json --outputFile=<workdir>/.microsoft__PyRIT-3933-result src/components/Registry/ConverterRegistry.test.tsx",
+  "base": "699931d2fe71"
+ },
+ {
+  "repo": "redis/redis-py",
+  "number": 4535,
+  "lang": "Python",
+  "title": "Drop the keys option before running response callbacks in async cluster transactions",
+  "url": "https://github.com/redis/redis-py/pull/4535",
+  "outcome": "STILL_FAILS_AFTER_FIX",
+  "fail_kind": "assertion",
+  "resolved_by": "upstream default branch, 2 commits before the merge",
+  "before": {
+   "rc": 1,
+   "ran": 181,
+   "failed": 61,
+   "errored": true,
+   "why": "failed on setup with \"redis.exceptions.ConnectionError: Error 111 connecting to localhost:6379. Connect call failed ('127.0.0.1', 6379).\" self = <redis.asyncio.connection.Connection(host=localhost,port=6379,db=0)> check_health = True, retry_socket_connect = False async def connect_check_health( self, check_health: bool = True, retry_socket_connect: bool = True ): if self.is_connected: return # Track actual retry atte"
+  },
+  "after": {
+   "rc": 1,
+   "ran": 181,
+   "failed": 61,
+   "errored": true,
+   "why": "failed on setup with \"redis.exceptions.ConnectionError: Error 111 connecting to localhost:6379. Connect call failed ('127.0.0.1', 6379).\" self = <redis.asyncio.connection.Connection(host=localhost,port=6379,db=0)> check_health = True, retry_socket_connect = False async def connect_check_health( self, check_health: bool = True, retry_socket_connect: bool = True ): if self.is_connected: return # Track actual retry atte"
+  },
+  "seconds": 54.0,
+  "detail": "ror_raised[single]\nERROR tests/test_asyncio/test_cluster_transaction.py::TestClusterTransaction::test_exec_error_raised[pool]\nERROR tests/test_asyncio/test_cluster_transaction.py::TestClusterTransaction::test_parse_error_raised[single]\nERROR tests/test_asyncio/test_cluster_transaction.py::TestClusterTransaction::test_parse_error_raised[pool]\nERROR tests/test_asyncio/test_cluster_transaction.py::TestClusterTransaction::test_transaction_callable[single]\nERROR tests/test_asyncio/test_cluster_transaction.py::TestClusterTransaction::test_transaction_callable[pool]\nERROR tests/test_asyncio/test_cluster_transaction.py::TestClusterTransaction::test_transaction_discard[single]\nERROR tests/test_asyncio/test_cluster_transaction.py::TestClusterTransaction::test_transaction_discard[pool]\n61 failed, 1 passed, 2 warnings, 120 errors in 21.00s\nCannot read termcap database;\nusing dumb terminal settings.\n",
+  "cmd": "sh -c cd <workdir>/redis__redis-py-4535 && <workdir>/redis__redis-py-4535/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.redis__redis-py-4535-result tests/test_asyncio/test_cluster_transaction.py",
+  "base": "b58395d0b07e"
+ },
+ {
+  "repo": "deepset-ai/haystack",
+  "number": 12663,
+  "lang": "Python",
+  "title": "fix: request encoding_format=\"float\" in OpenAIDocumentEmbedder.run_async",
+  "url": "https://github.com/deepset-ai/haystack/pull/12663",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "3 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 22,
+   "failed": 1,
+   "errored": false,
+   "why": "KeyError: 'encoding_format' self = <embedders.test_openai_document_embedder.TestOpenAIDocumentEmbedder object at 0x7f8484bdc050> @pytest.mark.asyncio async def test_embed_batch_requests_float_encoding_format_async(self): # Same requirement as the sync path above, but this one was missing it (see #12663). embedder = OpenAIDocumentEmbedder(api_key=Secret.from_token(\"fake_api_key\")) await embedder.warm_up_async() assert"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 22,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 15.6,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "<workdir>/deepset-ai__haystack-12663/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.deepset-ai__haystack-12663-result test/components/embedders/test_openai_document_embedder.py",
+  "base": "b26dd80fd110"
+ },
+ {
+  "repo": "posit-dev/chatlas",
+  "number": 468,
+  "lang": "Python",
+  "title": "fix(bedrock): keep redacted reasoning blocks when streaming a Converse model",
+  "url": "https://github.com/posit-dev/chatlas/pull/468",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 96,
+   "failed": 1,
+   "errored": false,
+   "why": "assert 0 == 1 + where 0 = len([]) self = <tests.test_provider_bedrock_converse.TestStreamAccumulation object at 0x7fe735791e10> def test_redacted_reasoning_deltas_are_kept(self): events = [ {\"messageStart\": {\"role\": \"assistant\"}}, { \"contentBlockDelta\": { \"contentBlockIndex\": 0, \"delta\": { \"reasoningContent\": {\"redactedContent\": b\"encrypted-reasoning\"} }, } }, {\"contentBlockStop\": {\"contentBlockIndex\": 0}}, { \"conten"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 96,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 42.3,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "<workdir>/posit-dev__chatlas-468/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.posit-dev__chatlas-468-result tests/test_provider_bedrock_converse.py",
+  "base": "22208b180762"
+ },
+ {
+  "repo": "valkey-io/valkey-py",
+  "number": 361,
+  "lang": "Python",
+  "title": "Fix async pipeline error messages embedding the args tuple",
+  "url": "https://github.com/valkey-io/valkey-py/pull/361",
+  "outcome": "STILL_FAILS_AFTER_FIX",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 463,
+   "failed": 158,
+   "errored": true,
+   "why": "assert \"Command # 1 ...d of value',)\" == 'Command # 1 ...kind of value' Skipping 38 identical leading characters in diff, use -v to show - ed error: WRONGTYPE Operation against a key holding the wrong kind of value + ed error: ('WRONGTYPE Operation against a key holding the wrong kind of value',) ? ++ +++ self = <tests.test_asyncio.test_cluster.TestClusterPipelineErrorMessages object at 0x7f78d9f3b4d0> async def test"
+  },
+  "after": {
+   "rc": 1,
+   "ran": 463,
+   "failed": 156,
+   "errored": true,
+   "why": "valkey.exceptions.ValkeyClusterException: Valkey Cluster cannot be connected. Please provide at least one reachable node: Error 111 connecting to 127.0.0.1:16379. Connect call failed ('127.0.0.1', 16379). self = <valkey.asyncio.connection.Connection(host=127.0.0.1,port=16379,db=0,client_name=test)> async def connect(self): \"\"\"Connects to the Valkey server if not already connected\"\"\" if self.is_connected: return try: "
+  },
+  "seconds": 112.5,
+  "detail": "erPipeline::test_can_run_concurrent_pipelines[pool]\n156 failed, 37 passed, 2 skipped, 1 warning, 277 errors in 59.30s\n<workdir>/valkey-io__valkey-py-361/.venv/lib/python3.14/site-packages/pytest_asyncio/plugin.py:306: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to \"function\" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\". Set it to \"fixture-scope\" to keep the current behavior.\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n",
+  "cmd": "<workdir>/valkey-io__valkey-py-361/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.valkey-io__valkey-py-361-result tests/test_asyncio/test_cluster.py",
+  "base": "184da206f244"
+ },
+ {
+  "repo": "TanStack/ai",
+  "number": 1931,
+  "lang": "TypeScript",
+  "title": "fix(ai-vercel-gateway): report gatewayCost as usage.cost",
+  "url": "https://github.com/TanStack/ai/pull/1931",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 6,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 6,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 86.1,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd packages/ai-vercel-gateway && npx -y vitest run --reporter=json --outputFile=<workdir>/.TanStack__ai-1931-result tests/gateway-cost.test.ts",
+  "base": "669fd31d995a"
+ },
+ {
+  "repo": "kite-org/kite",
+  "number": 757,
+  "lang": "TypeScript",
+  "title": "fix(ai): default the Anthropic model to claude-sonnet-5-5",
+  "url": "https://github.com/kite-org/kite/pull/757",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 85,
+   "failed": 2,
+   "errored": false,
+   "why": "FAIL | FAIL\tgithub.com/zxh326/kite/pkg/model\t0.169s"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 85,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 67.0,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "go -C . test -count=1 -json ./pkg/model",
+  "base": "f1b6e6ca84c0"
+ },
+ {
+  "repo": "PostHog/posthog-js",
+  "number": 5764,
+  "lang": "TypeScript",
+  "title": "fix(ai): skip JSON parse for Anthropic streamed tool calls without arguments",
+  "url": "https://github.com/PostHog/posthog-js/pull/5764",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 42,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 42,
+   "failed": 0,
+   "errored": false
+  },
+  "build": [
+   {
+    "cmd": "pnpm --filter @posthog/ai^... run build",
+    "rc": 0
+   }
+  ],
+  "seconds": 60.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd packages/ai && npx -y vitest run --reporter=json --outputFile=<workdir>/.PostHog__posthog-js-5764-result tests/anthropic.test.ts",
+  "base": "fce957b9a965"
+ },
+ {
+  "repo": "livekit/track-processors-js",
+  "number": 155,
+  "lang": "TypeScript",
+  "title": "fix: drop pending first frame after background processor destruction",
+  "url": "https://github.com/livekit/track-processors-js/pull/155",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "2 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 1,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 1,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 8.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd . && npx -y vitest run --reporter=json --outputFile=<workdir>/.livekit__track-processors-js-155-result test/background-transformer.test.ts",
+  "base": "c4bc727ac7d6"
+ },
+ {
+  "repo": "mnfst/llm-gateway",
+  "number": 3122,
+  "lang": "TypeScript",
+  "title": "fix(backend): map Gemini prompt blocks to content_filter",
+  "url": "https://github.com/mnfst/llm-gateway/pull/3122",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 140,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 140,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 35.0,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd packages/backend && npx -y jest --json --outputFile=<workdir>/.mnfst__llm-gateway-3122-result src/routing/proxy/__tests__/google-adapter.spec.ts",
+  "base": "e10162da22c9"
+ },
+ {
+  "repo": "agentscope-ai/QwenPaw",
+  "number": 8715,
+  "lang": "TypeScript",
+  "title": "fix(channels): accept WeChat send receipts that only carry message_id",
+  "url": "https://github.com/agentscope-ai/QwenPaw/pull/8715",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 5,
+   "failed": 2,
+   "errored": false,
+   "why": "qwenpaw_channel_wechat.errors.WeChatDeliveryError: PLATFORM_RESULT_UNKNOWN def test_message_id_only_is_a_successful_send(): > _check({\"message_id\": \"test-123\"}) tests/unit/channels/test_wechat_send_result.py:39: _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ tests/unit/channels/test_wechat_send_result.py:29: in _check WeChatPlatform._check_result(response, sent) _ _ _ _ _ _ _ _ _ _ _ "
+  },
+  "after": {
+   "rc": 0,
+   "ran": 5,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 278.7,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd <workdir>/agentscope-ai__QwenPaw-8715 && <workdir>/agentscope-ai__QwenPaw-8715/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.agentscope-ai__QwenPaw-8715-result tests/unit/channels/test_wechat_send_result.py",
+  "base": "19363e6069fb"
+ },
+ {
+  "repo": "juspay/neurolink",
+  "number": 2080,
+  "lang": "TypeScript",
+  "title": "fix(workflow): replace the retired models in the preset workflows",
+  "url": "https://github.com/juspay/neurolink/pull/2080",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "after": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 28.9,
+  "detail": "no test ran after the fix either: JSON report written to <workdir>/.juspay__neurolink-2080-result\n",
+  "cmd": "sh -c cd . && npx -y vitest run --reporter=json --outputFile=<workdir>/.juspay__neurolink-2080-result test/continuous-test-suite-retired-model-defaults.ts",
+  "base": "402fe1b08c2d"
+ },
+ {
+  "repo": "TanStack/ai",
+  "number": 2083,
+  "lang": "TypeScript",
+  "title": "fix(ai-gemini): include thinking tokens in Gemini Live usage completionTokens",
+  "url": "https://github.com/TanStack/ai/pull/2083",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 2,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 2,
+   "failed": 0,
+   "errored": false
+  },
+  "build": [
+   {
+    "cmd": "pnpm --filter @tanstack/ai-gemini^... run build",
+    "rc": 0
+   }
+  ],
+  "seconds": 56.1,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd packages/ai-gemini && npx -y vitest run --reporter=json --outputFile=<workdir>/.TanStack__ai-2083-result tests/realtime-usage.test.ts",
+  "base": "275397292ef5"
+ },
+ {
+  "repo": "wecode-ai/Wegent",
+  "number": 4181,
+  "lang": "TypeScript",
+  "title": "fix(deep-research): use deep-research-preview-04-2026 as the default agent",
+  "url": "https://github.com/wecode-ai/Wegent/pull/4181",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 1,
+   "failed": 1,
+   "errored": false,
+   "why": "AssertionError: assert 'deep-researc...eview-12-2025' == 'deep-researc...eview-04-2026' - deep-research-preview-04-2026 ? ^^ ^ + deep-research-pro-preview-12-2025 ? ++++ ^^ ^ monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7febcdc1bbb0> @pytest.mark.asyncio async def test_create_interaction_defaults_to_the_current_deep_research_agent( monkeypatch: pytest.MonkeyPatch, ) -> None: sent: dict = {} async def fa"
+  },
+  "after": {
+   "rc": 0,
+   "ran": 1,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 67.8,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd <workdir>/wecode-ai__Wegent-4181/shared && <workdir>/wecode-ai__Wegent-4181/.venv/bin/python -m pytest -q -p no:cacheprovider --junitxml=<workdir>/.wecode-ai__Wegent-4181-result tests/test_gemini_interaction_default_agent.py",
+  "base": "1ec629100e7f"
+ },
+ {
+  "repo": "Twigpine/openclaude",
+  "number": 2480,
+  "lang": "TypeScript",
+  "title": "fix(openai-shim): flag length-truncated non-streaming replies like the stream path",
+  "url": "https://github.com/Twigpine/openclaude/pull/2480",
+  "outcome": "SETUP_FAIL",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "seconds": 38.3,
+  "detail": "unsupported test runner; root scripts.test = 'bun run scripts/run-tests.ts --feature=UNATTENDED_RETRY --max-concurrency=1'",
+  "base": "a7b976383c1d"
+ },
+ {
+  "repo": "mnfst/llm-gateway",
+  "number": 3129,
+  "lang": "TypeScript",
+  "title": "fix(backend): forward seed to Gemini generationConfig",
+  "url": "https://github.com/mnfst/llm-gateway/pull/3129",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 145,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 145,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 35.6,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd packages/backend && npx -y jest --json --outputFile=<workdir>/.mnfst__llm-gateway-3129-result src/routing/proxy/__tests__/google-adapter.spec.ts",
+  "base": "6e4b2f476964"
+ },
+ {
+  "repo": "formkit/formkit",
+  "number": 1816,
+  "lang": "TypeScript",
+  "title": "fix(addons): honor control field in localStorage plugin",
+  "url": "https://github.com/formkit/formkit/pull/1816",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true,
+   "why": "\u25cf Test suite failed to run Jest encountered an unexpected token Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax. Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration. By default \"node_modules\" folder is ignored by transfor"
+  },
+  "after": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true,
+   "why": "\u25cf Test suite failed to run Jest encountered an unexpected token Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax. Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration. By default \"node_modules\" folder is ignored by transfor"
+  },
+  "build": [
+   {
+    "cmd": "pnpm --filter @formkit/addons^... run build",
+    "rc": 0
+   }
+  ],
+  "seconds": 33.3,
+  "detail": "no test ran after the fix either: \u25cf Test suite failed to run Jest encountered an unexpected token Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax. Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration. By default \"node_modules\" folder is ignored by transfor",
+  "cmd": "sh -c cd packages/addons && npx -y jest --json --outputFile=<workdir>/.formkit__formkit-1816-result __tests__/localStorage.spec.ts",
+  "base": "57eb6ca876ad"
+ },
+ {
+  "repo": "payloadcms/payload",
+  "number": 19438,
+  "lang": "TypeScript",
+  "title": "fix: await a remote JSON schema before validating",
+  "url": "https://github.com/payloadcms/payload/pull/19438",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 3,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 3,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 43.6,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd . && npx -y vitest run --reporter=json --outputFile=<workdir>/.payloadcms__payload-19438-result packages/payload/src/fields/validateJSONSchema.spec.ts",
+  "base": "25dfb248a869"
+ },
+ {
+  "repo": "kodustech/kodus-ai",
+  "number": 2195,
+  "lang": "TypeScript",
+  "title": "fix(mcp): return Kody rule timestamps as ISO strings from the rule listing tools",
+  "url": "https://github.com/kodustech/kodus-ai/pull/2195",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 12,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 12,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 37.6,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd . && npx -y jest --json --outputFile=<workdir>/.kodustech__kodus-ai-2195-result libs/mcp-server/tools/kodyRules.tools.spec.ts",
+  "base": "bd2cb7a227d4"
+ },
+ {
+  "repo": "Tencent/teamai-cli",
+  "number": 1781,
+  "lang": "TypeScript",
+  "title": "fix(import): reject a non-numeric --max-repos instead of passing NaN",
+  "url": "https://github.com/Tencent/teamai-cli/pull/1781",
+  "outcome": "SETUP_FAIL",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "seconds": 1502.3,
+  "detail": "TIMEOUT",
+  "base": "afa8cb9456f0"
+ },
+ {
+  "repo": "umami-software/umami",
+  "number": 4712,
+  "lang": "TypeScript",
+  "title": "fix: drop the Redis cache of a link or pixel when it is updated or deleted",
+  "url": "https://github.com/umami-software/umami/pull/4712",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 4,
+   "failed": 3,
+   "errored": false,
+   "why": ""
+  },
+  "after": {
+   "rc": 0,
+   "ran": 4,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 20.9,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd . && npx -y vitest run --reporter=json --outputFile=<workdir>/.umami-software__umami-4712-result src/queries/prisma/link.test.ts",
+  "base": "559e3c607c23"
+ },
+ {
+  "repo": "CopilotKit/OpenBot",
+  "number": 982,
+  "lang": "TypeScript",
+  "title": "fix(desktop): default the Anthropic model to claude-sonnet-5-5",
+  "url": "https://github.com/CopilotKit/OpenBot/pull/982",
+  "outcome": "SETUP_FAIL",
+  "resolved_by": "upstream default branch, 3 commits before the merge",
+  "seconds": 10.9,
+  "detail": "3/CopilotKit__OpenBot-982 does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory\n\nerror: <workdir>/CopilotKit__OpenBot-982 does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory\n\nerror: <workdir>/CopilotKit__OpenBot-982 does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory\n",
+  "base": "35133484fd6e"
+ },
+ {
+  "repo": "open-multi-agent/open-multi-agent",
+  "number": 664,
+  "lang": "TypeScript",
+  "title": "fix(core): update retired default models in oma provider template",
+  "url": "https://github.com/open-multi-agent/open-multi-agent/pull/664",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 20,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 20,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 13.6,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd packages/core && npx -y vitest run --reporter=json --outputFile=<workdir>/.open-multi-agent__open-multi-agent-664-result tests/cli.test.ts",
+  "base": "a2fe43ce3414"
+ },
+ {
+  "repo": "juspay/neurolink",
+  "number": 2079,
+  "lang": "TypeScript",
+  "title": "fix(vertex): default to gemini-3.8-flash now that gemini-2.5-flash is retired on Vertex",
+  "url": "https://github.com/juspay/neurolink/pull/2079",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "after": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 21.8,
+  "detail": "no test ran after the fix either: JSON report written to <workdir>/.juspay__neurolink-2079-result\n",
+  "cmd": "sh -c cd . && npx -y vitest run --reporter=json --outputFile=<workdir>/.juspay__neurolink-2079-result test/continuous-test-suite-bugfixes.ts",
+  "base": "1c31701f90bd"
+ },
+ {
+  "repo": "GoDiao/dreamcoder",
+  "number": 197,
+  "lang": "TypeScript",
+  "title": "fix(desktop): stage the dev sidecar and ripgrep like the packaged bin layout",
+  "url": "https://github.com/GoDiao/dreamcoder/pull/197",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true
+  },
+  "after": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true
+  },
+  "seconds": 36.6,
+  "detail": "no test ran after the fix either: e:internal/modules/esm/resolve:772:81)\n    at moduleResolve (node:internal/modules/esm/resolve:859:18)\n    at defaultResolve (node:internal/modules/esm/resolve:989:11)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)\n    at ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)\n    at ModuleJob._link (node:internal/modules/esm/module_job:182:49) {\n  code: 'ERR_MODULE_NOT_FOUND'\n}\n\n\n\n",
+  "cmd": "sh -c cd desktop && npx -y vitest run --reporter=json --outputFile=<workdir>/.GoDiao__dreamcoder-197-result electron/devSidecarPaths.test.ts",
+  "base": "c7a28ca74e6c"
+ },
+ {
+  "repo": "PostHog/posthog-js",
+  "number": 5563,
+  "lang": "TypeScript",
+  "title": "fix(ai): keep refusal content in OpenAI Responses API output",
+  "url": "https://github.com/PostHog/posthog-js/pull/5563",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "2 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 20,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 20,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 35.2,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd packages/ai && npx -y vitest run --reporter=json --outputFile=<workdir>/.PostHog__posthog-js-5563-result tests/tools.test.ts",
+  "base": "93572fb9380d"
+ },
+ {
+  "repo": "umami-software/umami",
+  "number": 4708,
+  "lang": "TypeScript",
+  "title": "fix: return 404 for unknown share ids on GET and DELETE /api/share/id/{shareId}",
+  "url": "https://github.com/umami-software/umami/pull/4708",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "after": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "seconds": 12.8,
+  "detail": "no test ran after the fix either: JSON report written to <workdir>/.umami-software__umami-4708-result\n",
+  "cmd": "sh -c cd . && npx -y vitest run --reporter=json --outputFile=<workdir>/.umami-software__umami-4708-result tests/api/shares.spec.ts",
+  "base": "a8b7e7d6d929"
+ },
+ {
+  "repo": "kodustech/kodus-ai",
+  "number": 2147,
+  "lang": "TypeScript",
+  "title": "fix(llm): use Claude reasoning traits for proxied Claude ids",
+  "url": "https://github.com/kodustech/kodus-ai/pull/2147",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "2 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 21,
+   "failed": 3,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 21,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 19.7,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd . && npx -y jest --json --outputFile=<workdir>/.kodustech__kodus-ai-2147-result libs/llm/providers/anthropic/anthropic.spec.ts",
+  "base": "4b5c881cd081"
+ },
+ {
+  "repo": "TanStack/ai",
+  "number": 2111,
+  "lang": "TypeScript",
+  "title": "fix(ai-mistral): report model_length as a context overflow",
+  "url": "https://github.com/TanStack/ai/pull/2111",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "2 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 37,
+   "failed": 3,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 37,
+   "failed": 0,
+   "errored": false
+  },
+  "build": [
+   {
+    "cmd": "pnpm --filter @tanstack/ai-mistral^... run build",
+    "rc": 0
+   }
+  ],
+  "seconds": 60.2,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd packages/ai-mistral && npx -y vitest run --reporter=json --outputFile=<workdir>/.TanStack__ai-2111-result tests/mistral-adapter.test.ts",
+  "base": "4bd213f18e51"
+ },
+ {
+  "repo": "PostHog/posthog-js",
+  "number": 5355,
+  "lang": "TypeScript",
+  "title": "fix(ai): keep the refusal of OpenAI chat completions in the captured output",
+  "url": "https://github.com/PostHog/posthog-js/pull/5355",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 5,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 5,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 29.7,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd packages/ai && npx -y vitest run --reporter=json --outputFile=<workdir>/.PostHog__posthog-js-5355-result tests/openai-stream-accumulators.test.ts",
+  "base": "a856dd219b82"
+ },
+ {
+  "repo": "i18next/next-i18next",
+  "number": 2356,
+  "lang": "TypeScript",
+  "title": "fix: normalize string namespaces in serverSideTranslations",
+  "url": "https://github.com/i18next/next-i18next/pull/2356",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 21,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 21,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 26.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd . && npx -y jest --json --outputFile=<workdir>/.i18next__next-i18next-2356-result src/pagesRouter/serverSideTranslations.test.tsx",
+  "base": "f1c4ce9c1a81"
+ },
+ {
+  "repo": "formkit/tempo",
+  "number": 87,
+  "lang": "TypeScript",
+  "title": "fix(yearDays): return whole days regardless of time zone",
+  "url": "https://github.com/formkit/tempo/pull/87",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 4,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 4,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 8.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd . && npx -y vitest run --reporter=json --outputFile=<workdir>/.formkit__tempo-87-result src/__tests__/yearDays.spec.ts",
+  "base": "22050477ad5c"
+ },
+ {
+  "repo": "jagreehal/ai-sdk-ollama",
+  "number": 1095,
+  "lang": "TypeScript",
+  "title": "fix: abort the Ollama request when the stream is cancelled",
+  "url": "https://github.com/jagreehal/ai-sdk-ollama/pull/1095",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 14,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 14,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 13.2,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd packages/ai-sdk-ollama && npx -y vitest run --reporter=json --outputFile=<workdir>/.jagreehal__ai-sdk-ollama-1095-result src/models/chat-language-model-stream.test.ts",
+  "base": "2e7e9973402e"
+ },
+ {
+  "repo": "open-multi-agent/open-multi-agent",
+  "number": 666,
+  "lang": "TypeScript",
+  "title": "fix(gemini): map safety/recitation/blocklist finish reasons to content_filter",
+  "url": "https://github.com/open-multi-agent/open-multi-agent/pull/666",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 49,
+   "failed": 6,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 49,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 9.0,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd packages/core && npx -y vitest run --reporter=json --outputFile=<workdir>/.open-multi-agent__open-multi-agent-666-result tests/gemini-adapter-contract.test.ts",
+  "base": "a2fe43ce3414"
+ },
+ {
+  "repo": "open-metadata/OpenMetadata",
+  "number": 36275,
+  "lang": "TypeScript",
+  "title": "Fixes #36120: Match Vertica view names case-insensitively in the view definition lookup",
+  "url": "https://github.com/open-metadata/OpenMetadata/pull/36275",
+  "outcome": "SETUP_FAIL",
+  "resolved_by": "upstream default branch, 4 commits before the merge",
+  "seconds": 39.7,
+  "detail": " version `0.11.32`. Update `uv` by running `uv self update 0.13.4`.\n\nerror: Required uv version `==0.13.4` does not match the running version `0.11.32`. Update `uv` by running `uv self update 0.13.4`.\n\nerror: Required uv version `==0.13.4` does not match the running version `0.11.32`. Update `uv` by running `uv self update 0.13.4`.\n\nerror: Required uv version `==0.13.4` does not match the running version `0.11.32`. Update `uv` by running `uv self update 0.13.4`.\n\nerror: Required uv version `==0.13.4` does not match the running version `0.11.32`. Update `uv` by running `uv self update 0.13.4`.\n",
+  "base": "7f0273c2e5d6"
+ },
+ {
+  "repo": "mnfst/llm-gateway",
+  "number": 3093,
+  "lang": "TypeScript",
+  "title": "fix: keep streamed tool calls apart when the provider omits their index",
+  "url": "https://github.com/mnfst/llm-gateway/pull/3093",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "assertion",
+  "resolved_by": "4 commits at the branch tip, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 59,
+   "failed": 1,
+   "errored": false,
+   "why": "\u25cf Anthropic Messages adapter \u203a createMessagesStreamTransformer \u203a opens one tool_use block per call when the provider omits tool call indexes expect(received).toEqual(expected) // deep equality - Expected - 4 + Received + 0 Array [ Array [ 0, \"get_weather\", ], - Array [ - 1, - \"get_time\", - ], ] \u001b[0m \u001b[90m 908 |\u001b[39m \u001b[33m.\u001b[39mmap((e) \u001b[33m=>\u001b[39m [e\u001b[33m.\u001b[39mindex\u001b[33m,\u001b[39m e\u001b[33m.\u001b[39mdelta\u001b[33m.\u001b[39mpartial_json"
+  },
+  "after": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true,
+   "why": "\u25cf Test suite failed to run \u001b[96msrc/routing/proxy/anthropic-messages-adapter.ts\u001b[0m:\u001b[93m8\u001b[0m:\u001b[93m38\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2307: \u001b[0mCannot find module 'manifest-shared' or its corresponding type declarations. \u001b[7m8\u001b[0m import { resolveToolCallIndex } from 'manifest-shared'; \u001b[7m \u001b[0m \u001b[91m ~~~~~~~~~~~~~~~~~\u001b[0m"
+  },
+  "seconds": 28.8,
+  "detail": "no test ran after the fix either: \u25cf Test suite failed to run \u001b[96msrc/routing/proxy/anthropic-messages-adapter.ts\u001b[0m:\u001b[93m8\u001b[0m:\u001b[93m38\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2307: \u001b[0mCannot find module 'manifest-shared' or its corresponding type declarations. \u001b[7m8\u001b[0m import { resolveToolCallIndex } from 'manifest-shared'; \u001b[7m \u001b[0m \u001b[91m ~~~~~~~~~~~~~~~~~\u001b[0m",
+  "cmd": "sh -c cd packages/backend && npx -y jest --json --outputFile=<workdir>/.mnfst__llm-gateway-3093-result src/routing/proxy/__tests__/anthropic-messages-adapter.spec.ts",
+  "base": "c6c568f73ea9"
+ },
+ {
+  "repo": "kodustech/kodus-ai",
+  "number": 2252,
+  "lang": "TypeScript",
+  "title": "fix(code-review): mark a chunked review incomplete when a batch throws",
+  "url": "https://github.com/kodustech/kodus-ai/pull/2252",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 8,
+   "failed": 2,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 8,
+   "failed": 0,
+   "errored": false
+  },
+  "seconds": 17.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd . && npx -y jest --json --outputFile=<workdir>/.kodustech__kodus-ai-2252-result libs/code-review/infrastructure/agents/collaborators/batch-runner.spec.ts",
+  "base": "c37c05568676"
+ },
+ {
+  "repo": "microsoft/TypeAgent",
+  "number": 3247,
+  "lang": "TypeScript",
+  "title": "fix(aiclient): count Claude streaming usage once",
+  "url": "https://github.com/microsoft/TypeAgent/pull/3247",
+  "outcome": "RUNNER_ERROR",
+  "fail_kind": "no_tests_ran",
+  "resolved_by": "upstream default branch, 2 commits before the merge",
+  "before": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true
+  },
+  "after": {
+   "rc": 1,
+   "ran": 0,
+   "failed": 0,
+   "errored": true
+  },
+  "seconds": 29.7,
+  "detail": "no test ran after the fix either: No tests found, exiting with code 1\nRun with `--passWithNoTests` to exit with code 0\nIn <workdir>/microsoft__TypeAgent-3247/ts/packages/aiclient\n  89 files checked.\n  testMatch: **/dist/test/**/*.(spec|test).js?(x) - 0 matches\n  testPathIgnorePatterns: /node_modules/ - 89 matches\n  testRegex:  - 0 matches\nPattern: test/providerAdapter.spec.ts - 0 matches\n",
+  "cmd": "sh -c cd ts/packages/aiclient && npx -y jest --json --outputFile=<workdir>/.microsoft__TypeAgent-3247-result test/providerAdapter.spec.ts",
+  "base": "f3b26a7c6a36"
+ },
+ {
+  "repo": "remotion-dev/remotion",
+  "number": 13315,
+  "lang": "TypeScript",
+  "title": "`@remotion/studio`: Fix effect sizing in picker thumbnails",
+  "url": "https://github.com/remotion-dev/remotion/pull/13315",
+  "outcome": "SETUP_FAIL",
+  "resolved_by": "4 commits at the branch tip, line drift 0",
+  "seconds": 44.9,
+  "detail": "npm error code EUNSUPPORTEDPROTOCOL\nnpm error Unsupported URL Type \"catalog:\": catalog:\nnpm error A complete log of this run can be found in: <workdir>/_cache/npm/_logs/2026-11-21T03_43_09_546Z-debug-0.log\n",
+  "base": "eeb428f09552"
+ },
+ {
+  "repo": "CherryHQ/cherry-studio",
+  "number": 21939,
+  "lang": "TypeScript",
+  "title": "fix(model-parameters): omit sampling params for all Claude models that reject them",
+  "url": "https://github.com/CherryHQ/cherry-studio/pull/21939",
+  "outcome": "SETUP_FAIL",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "seconds": 7.3,
+  "detail": "unsupported engine: the package requires Node >=24.12.0 and this environment has 22",
+  "base": "d01b83d2cc58",
+  "cmd": null
+ },
+ {
+  "repo": "reticlehq/reticle",
+  "number": 2106,
+  "lang": "TypeScript",
+  "title": "fix(server): bound reticle_verify flows/change by a total budget and stop when the session is lost",
+  "url": "https://github.com/reticlehq/reticle/pull/2106",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "recorded patches, base 4 commits below the tip",
+  "before": {
+   "rc": 1,
+   "ran": 20,
+   "failed": 4,
+   "errored": false,
+   "why": ""
+  },
+  "after": {
+   "rc": 0,
+   "ran": 20,
+   "failed": 0,
+   "errored": false,
+   "why": ""
+  },
+  "build": [
+   {
+    "cmd": "pnpm --filter @reticlehq/server^... run build",
+    "rc": 0
+   }
+  ],
+  "seconds": 75.2,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd server && npx -y vitest run --reporter=json --outputFile=<workdir>/.reticlehq__reticle-2106-result src/command/cli/adhoc-suite.test.ts",
+  "base": "c446d35397ed"
+ },
+ {
+  "repo": "fosrl/pangolin",
+  "number": 4052,
+  "lang": "TypeScript",
+  "title": "fix(ai-gateway): stop subtracting Bedrock Converse cache reads from inputTokens",
+  "url": "https://github.com/fosrl/pangolin/pull/4052",
+  "outcome": "SETUP_FAIL",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "seconds": 30.0,
+  "detail": "es/8393.\nnpm error code E403\nnpm error 403 403 Forbidden (agent proxy: no rule or network setting allows this host) - GET https://static.pangolin.net/packages/devolutions-iron-remote-desktop-rdp-0.0.2.tgz\nnpm error 403 In most cases, you or one of your dependencies are requesting\nnpm error 403 a package version that is forbidden by your security policy, or\nnpm error 403 on a server you do not have access to.\nnpm error A complete log of this run can be found in: <workdir>/_cache/npm/_logs/2026-11-21T03_37_31_909Z-debug-0.log\n",
+  "base": "1ae2aa810e50"
+ },
+ {
+  "repo": "reticlehq/reticle",
+  "number": 2104,
+  "lang": "TypeScript",
+  "title": "fix(crawl): do not click a control that has no accessible name",
+  "url": "https://github.com/reticlehq/reticle/pull/2104",
+  "outcome": "REPRODUCED",
+  "fail_kind": "assertion",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "before": {
+   "rc": 1,
+   "ran": 2,
+   "failed": 1,
+   "errored": false
+  },
+  "after": {
+   "rc": 0,
+   "ran": 2,
+   "failed": 0,
+   "errored": false
+  },
+  "build": [
+   {
+    "cmd": "pnpm --filter @reticlehq/server^... run build",
+    "rc": 0
+   }
+  ],
+  "seconds": 38.5,
+  "detail": "fails at base, passes with the fix",
+  "cmd": "sh -c cd server && npx -y vitest run --reporter=json --outputFile=<workdir>/.reticlehq__reticle-2104-result src/features/crawl/crawl-unnamed.test.ts",
+  "base": "c446d35397ed"
+ },
+ {
+  "repo": "Tencent/teamai-cli",
+  "number": 1512,
+  "lang": "TypeScript",
+  "title": "fix(pull): exit 1 when the team repo fetch fails in a pull a person ran",
+  "url": "https://github.com/Tencent/teamai-cli/pull/1512",
+  "outcome": "SETUP_FAIL",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "seconds": 1502.5,
+  "detail": "TIMEOUT",
+  "base": "299ce8ed4d3d"
+ },
+ {
+  "repo": "electric-sql/electric-pglite",
+  "number": 1199,
+  "lang": "TypeScript",
+  "title": "fix(pglite): escape double quotes in identifier template helper",
+  "url": "https://github.com/electric-sql/electric-pglite/pull/1199",
+  "outcome": "SETUP_FAIL",
+  "resolved_by": "single commit, file set matches, line drift 0",
+  "seconds": 5.2,
+  "detail": " reused 0, downloaded 0, added 0\nPackages: +913\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\nProgress: resolved 913, reused 0, downloaded 143, added 140\nProgress: resolved 913, reused 0, downloaded 363, added 363\n\u2009ERR_PNPM_FETCH_403\u2009 GET https://codeload.github.com/rhashimoto/wa-sqlite/tar.gz/6dbe4f044502a7a285e815896f56304a808fe25b: Forbidden - 403\n\nNo authorization header was set for the request.\n\nNo authorization settings were found in the configs.\nTry to log in to the registry by running \"pnpm login\"\nor add the auth tokens manually to the ~/.npmrc file.\n",
+  "base": "bac163ecc92e"
+ }
+]
