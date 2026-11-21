@@ -38,8 +38,10 @@ echo 'export PATH="$HOME/.uvenv/bin:$PATH"' >> ~/.zshrc
 
 ## 3. Node 22 and pnpm
 
-If `node --version` already prints 22 or higher and `pnpm --version` prints a version, skip this
-step: a newer Node is fine.
+Do not skip this step because `node --version` already works. Under WSL, `node`, `npm` and `pnpm`
+are often the **Windows** programs, which WSL leaves on the PATH, and they fail on Linux files
+with errors such as `EISDIR ... \\wsl.localhost\...`. `check_env.sh` reports them as `WINDOWS`.
+After this step `which node pnpm` must print paths that start with `/usr/local/bin`.
 
 Download from nodejs.org and check the published checksum before installing. The `sha256sum`
 line must print `...tar.xz: OK`; if it does not, stop.
@@ -52,6 +54,8 @@ curl -fsSLO "https://nodejs.org/dist/latest-v22.x/$f"
 grep " $f\$" SHASUMS256.txt | sha256sum -c -
 sudo tar -xJf "$f" -C /usr/local --strip-components=1
 sudo npm install -g pnpm
+rehash
+which node pnpm
 ```
 
 ## 4. Get the code and the corpus

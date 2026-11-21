@@ -1,11 +1,15 @@
 #!/bin/sh
 # Report what the harness needs and whether it is present. Installs nothing.
 ok=1
-check() {  # name, command, minimum note
-  if command -v "$2" >/dev/null 2>&1; then
-    printf '  ok       %-8s %s\n' "$1" "$($2 $3 2>&1 | head -1)"
-  else
+check() {  # name, command, version flag, how to install
+  p=$(command -v "$2" 2>/dev/null || true)
+  if [ -z "$p" ]; then
     printf '  MISSING  %-8s %s\n' "$1" "$4"; ok=0
+  else
+    case "$p" in
+      /mnt/*) printf '  WINDOWS  %-8s %s is a Windows program and cannot work here. %s\n' "$1" "$p" "$4"; ok=0 ;;
+      *)      printf '  ok       %-8s %s  (%s)\n' "$1" "$($2 $3 2>&1 | head -1)" "$p" ;;
+    esac
   fi
 }
 echo "Toolchains:"
