@@ -22,13 +22,18 @@ rules = [
     (r"/mnt/[a-z]/Users/[^/\s\"']+", "/mnt/c/Users/<user>"),
     (r"/(?:home|Users)/[^/\s\"']+", "/home/<user>"),
     (r"/root\b", "/home/<user>"),
+    (r"[A-Za-z]:\\Users\\[^\\\s\"']+", lambda m: "C:\\Users\\<user>"),
 ]
+
+# Only paths are rewritten. The account name itself is NOT replaced wherever it appears: a name
+# such as "owner" is also an ordinary word in titles and messages, and changing those would
+# corrupt the data. The check at the end looks for the name only inside path shapes.
 
 def clean(o):
     if isinstance(o, str):
         for pat, rep in rules:
             o = re.sub(pat, rep, o)
-        return o.replace(user, "<user>") if len(user) > 3 else o
+        return o
     if isinstance(o, list):
         return [clean(x) for x in o]
     if isinstance(o, dict):
@@ -46,9 +51,11 @@ else:
     json.dump(out, open(a.dst, "w", encoding="utf-8"), indent=1)
 
 blob = open(a.dst, encoding="utf-8").read()
-left = [m for m in (user, home, work) if m and len(m) > 3 and m in blob]
+left = [m for m in (home, work) if m and len(m) > 3 and m in blob]
+left += re.findall(r"/(?:home|Users)/" + re.escape(user) + r"\b", blob)
+left += re.findall(r"Users\\\\" + re.escape(user) + r"\b", blob)
 print(f"{len(rows)} records written to {a.dst}")
 if left:
-    print("STILL PRESENT, do not publish:", left)
+    print("STILL PRESENT, do not publish:", sorted(set(left)))
     sys.exit(1)
 print("no account name or local path left")
