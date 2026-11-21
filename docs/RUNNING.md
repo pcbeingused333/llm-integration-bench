@@ -11,6 +11,8 @@ stops, run the same command again and it continues from the last finished instan
 Keep Windows from sleeping while it runs (Settings, System, Power, Screen and sleep: set both
 "When plugged in, put my device to sleep after" to Never). Sleep suspends WSL.
 
+Every command here is complete and can be pasted as it is. Nothing is a placeholder.
+
 ## 1. Packages
 
 ```sh
@@ -23,23 +25,27 @@ is Go 1.22; repositories that need a newer Go download their own toolchain autom
 
 ## 2. uv
 
+The commands below are for zsh. If your shell is bash, replace `~/.zshrc` with `~/.bashrc`. None of
+the commands contain trailing `#` comments, because zsh passes those to the command as arguments.
+
 ```sh
 python3 -m venv ~/.uvenv
 ~/.uvenv/bin/pip install uv
-echo 'export PATH="$HOME/.uvenv/bin:$PATH"' >> ~/.bashrc
-. ~/.bashrc
+echo 'export PATH="$HOME/.uvenv/bin:$PATH"' >> ~/.zshrc
+. ~/.zshrc
 ```
 
 ## 3. Node 22 and pnpm
 
-Download from nodejs.org and check the published checksum before installing:
+Download from nodejs.org and check the published checksum before installing. The `sha256sum`
+line must print `...tar.xz: OK`; if it does not, stop.
 
 ```sh
 cd /tmp
 curl -fsSLO https://nodejs.org/dist/latest-v22.x/SHASUMS256.txt
 f=$(grep -o 'node-v22[^ ]*-linux-x64.tar.xz' SHASUMS256.txt | head -1)
 curl -fsSLO "https://nodejs.org/dist/latest-v22.x/$f"
-grep " $f\$" SHASUMS256.txt | sha256sum -c -        # must print: ...tar.xz: OK
+grep " $f\$" SHASUMS256.txt | sha256sum -c -
 sudo tar -xJf "$f" -C /usr/local --strip-components=1
 sudo npm install -g pnpm
 ```
@@ -53,10 +59,11 @@ git clone --depth 1 https://github.com/pcbeingused333/merge-log-data
 git -C merge-log-data fetch --depth 1 origin 52780cead917ca3e965ddb45dc176db93c1f986c
 git -C merge-log-data checkout -q FETCH_HEAD
 cd llm-integration-bench
-sh scripts/check_env.sh ~          # must end with: All toolchains present.
+sh scripts/check_env.sh ~
 ```
 
-The corpus commit is the one the frozen pool was scored from (`data/CORPUS`).
+`check_env.sh` must end with `All toolchains present.` The corpus commit is the one the frozen pool
+was scored from (`data/CORPUS`).
 
 ## 5. A three-minute test first
 
@@ -75,10 +82,11 @@ Use `/tmp/work` as the work directory, so that no account name ends up in paths:
 ```sh
 cd ~/bench-run/llm-integration-bench
 nohup python3 -I scripts/run_pool.py ../merge-log-data data/scored_snapshot_2026-11-20.json /tmp/work ../pool.jsonl --workers 4 > ../pool.log 2>&1 &
-tail -f ../pool.log                # Ctrl-C leaves it running
+tail -f ../pool.log
 ```
 
-Each line shows an estimate of the hours left and the free disk. If the run stops, repeat the same
+Pressing Ctrl-C on `tail` leaves the run going. Each line shows an estimate of the hours left and the
+free disk. If the run stops, repeat the same
 command. When it ends, run a retry pass for the instances that failed on environment grounds:
 
 ```sh
@@ -98,7 +106,8 @@ python3 -I scripts/sanitize_results.py ../pool_retry.jsonl  results/pool_retry_2
 git checkout -b results-pool-2026-11-20
 git add results
 git commit -m "Add the full-pool results for the 2026-11-20 corpus"
-git push -u origin results-pool-2026-11-20      # needs GitHub login: run `gh auth login` first if asked
+git push -u origin results-pool-2026-11-20
 ```
 
-Then tell Claude the branch name; the results are read from there.
+If the push asks for a login, run `gh auth login` first (install the GitHub CLI with
+`sudo apt install -y gh` if needed). Then tell Claude the branch name; the results are read from there.
