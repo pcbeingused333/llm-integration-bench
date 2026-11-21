@@ -1,8 +1,8 @@
 # Running the full pool
 
-**Status: do not start the full run until `RESULTS.md` reports the wave 2 result.** Wave 2 reruns
-the 120-instance sample on the final harness; if it shows a systematic problem the scripts change
-and a long run started now would be wasted.
+**Status: ready.** The environment check and a three-minute test (step 5) pass on WSL with the same
+outcomes as the machine this was developed on. The headline yield figure will be taken from this
+run, restricted to the 120 instances in `data/sample_120.json`, so nothing is run twice.
 
 This is written for Ubuntu under WSL 2 on Windows, and works the same on Linux. Expect 8 to 14
 hours with 4 to 5 workers, 60 GB of free disk and 8 GB of memory or more (5 workers suit 8 cores
@@ -85,12 +85,28 @@ and that `../smoke.jsonl` has three lines.
 
 ## 6. The full run
 
-Use `/tmp/work` as the work directory, so that no account name ends up in paths:
+Everything measured so far used Node 22. If your Node is another version, switch for this terminal
+only, which does not change your default (the toolchain file records what was used either way):
+
+```sh
+nvm install 22
+nvm use 22
+node --version
+```
+
+`node --version` should print `v22.` followed by numbers. Use `/tmp/work` as the work directory,
+so that no account name ends up in paths:
 
 ```sh
 cd ~/bench-run/llm-integration-bench
 nohup python3 -I scripts/run_pool.py ../merge-log-data data/scored_snapshot_2026-11-20.json /tmp/work ../pool.jsonl --workers 5 > ../pool.log 2>&1 &
 tail -f ../pool.log
+```
+
+To see how it is going at any moment, in the same folder:
+
+```sh
+python3 -I scripts/progress.py ../pool.jsonl
 ```
 
 Pressing Ctrl-C on `tail` leaves the run going. Each line shows an estimate of the hours left and the
