@@ -1,0 +1,12 @@
+{
+ "started": "2026-11-21T11:10:36Z",
+ "workers": 5,
+ "go": "go version go1.22.2 linux/amd64",
+ "uv": "uv 0.13.9 (x86_64-unknown-linux-gnu)",
+ "node": "v22.23.5",
+ "pnpm": "12.21.0",
+ "python": "Python 3.12.3",
+ "gcc": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+ "os": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+ "cpus": 8
+}
