@@ -1,0 +1,422 @@
+[
+ {
+  "id": "test1",
+  "repo": "microsoft/PyRIT",
+  "number": 3962,
+  "title": "FIX replace retired Groq and OpenRouter models in .env_example",
+  "label": "Retired model defaults"
+ },
+ {
+  "id": "test2",
+  "repo": "logto-io/logto",
+  "number": 9975,
+  "title": "fix(connector): honor sendFrom and replyTo of the i18n email template in aws-ses",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test3",
+  "repo": "patterns-ai-core/langchainrb",
+  "number": 1077,
+  "title": "Send Ollama chat sampling parameters in options",
+  "label": "Provider API compatibility"
+ },
+ {
+  "id": "test4",
+  "repo": "OpenCSGs/csghub-server",
+  "number": 1614,
+  "title": "fix(aigateway): keep cached and reasoning token details in Responses adapter usage",
+  "label": "Token usage and cost"
+ },
+ {
+  "id": "test5",
+  "repo": "Mirascope/mirascope",
+  "number": 2920,
+  "title": "fix(llm): count Google streamed usage totals once in the TypeScript decoder",
+  "label": "Token usage and cost"
+ },
+ {
+  "id": "test6",
+  "repo": "Tencent/WeKnora",
+  "number": 4155,
+  "title": "fix(models): stop sending temperature to Claude models that reject it",
+  "label": "Provider API compatibility"
+ },
+ {
+  "id": "test7",
+  "repo": "lofcz/LLMTornado",
+  "number": 267,
+  "title": "OpenAI streams: keep the length and content_filter finish reasons of a stream with tool calls",
+  "label": "Streaming and tool calls"
+ },
+ {
+  "id": "test8",
+  "repo": "livekit/track-processors-js",
+  "number": 155,
+  "title": "fix: drop pending first frame after background processor destruction",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test9",
+  "repo": "jxxghp/MoviePilot",
+  "number": 7097,
+  "title": "fix(setup): 更新 Anthropic 默认模型为 claude-sonnet-4-6",
+  "label": "Retired model defaults"
+ },
+ {
+  "id": "test10",
+  "repo": "rommapp/romm",
+  "number": 5578,
+  "title": "fix(roms): read full country names in filenames as regions",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test11",
+  "repo": "Abilityai/trinity",
+  "number": 4650,
+  "title": "fix(ui): show the email once in the people picker when the label is the email",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test12",
+  "repo": "heymrun/heym",
+  "number": 915,
+  "title": "fix(vector-stores): report the real collection drop after delete",
+  "label": "RAG and vector stores"
+ },
+ {
+  "id": "test13",
+  "repo": "Tencent/teamai-cli",
+  "number": 1750,
+  "title": "fix(doctor)!: report the Codex config error when hooks/list returns errors",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test14",
+  "repo": "activeagents/activeagent",
+  "number": 613,
+  "title": "Report why an OpenAI Responses generation stopped",
+  "label": "Provider API compatibility"
+ },
+ {
+  "id": "test15",
+  "repo": "Azure/azure-kusto-go",
+  "number": 363,
+  "title": "fix: report dataset frame read errors between tables",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test16",
+  "repo": "agentscope-ai/QwenPaw",
+  "number": 8730,
+  "title": "fix(pawapp): disable proxy buffering on chat and tool-call SSE streams",
+  "label": "Streaming and tool calls"
+ },
+ {
+  "id": "test17",
+  "repo": "yilewang/llm-for-zotero",
+  "number": 539,
+  "title": "fix(usage): count Gemini thinking tokens as completion tokens",
+  "label": "Token usage and cost"
+ },
+ {
+  "id": "test18",
+  "repo": "i18next/next-i18next",
+  "number": 2356,
+  "title": "fix: normalize string namespaces in serverSideTranslations",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test19",
+  "repo": "reticlehq/reticle",
+  "number": 1919,
+  "title": "fix(engine): grade a net miss over a media file as inconclusive",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test20",
+  "repo": "googleapis/mcp-toolbox",
+  "number": 4390,
+  "title": "docs: replace retired gemini-2.0-flash with gemini-3.8-flash in samples",
+  "label": "Documentation"
+ },
+ {
+  "id": "test21",
+  "repo": "jxxghp/MoviePilot",
+  "number": 7410,
+  "title": "fix(notification): 通知仅有正文时 Slack、VoceChat、Synology Chat 不再显示标题 None",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test22",
+  "repo": "posit-dev/pointblank",
+  "number": 485,
+  "title": "fix: treat NaN as missing in col_vals_between() on Polars and PyArrow",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test23",
+  "repo": "kodustech/kodus-ai",
+  "number": 2251,
+  "title": "fix(observability): let the process exit on SIGTERM/SIGINT after shutdown",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test24",
+  "repo": "PostHog/posthog-android",
+  "number": 937,
+  "title": "fix(surveys): do not send $feature_flag_called for survey targeting flags",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test25",
+  "repo": "pypa/pipenv",
+  "number": 6758,
+  "title": "fix(pylock): classify packages by the groups that install them, and requires-python as python_version",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test26",
+  "repo": "zenml-io/zenml",
+  "number": 5395,
+  "title": "Use Luna in agent examples with compatible completion settings",
+  "label": "Retired model defaults"
+ },
+ {
+  "id": "test27",
+  "repo": "open-multi-agent/open-multi-agent",
+  "number": 666,
+  "title": "fix(gemini): map safety/recitation/blocklist finish reasons to content_filter",
+  "label": "Provider API compatibility"
+ },
+ {
+  "id": "test28",
+  "repo": "electerm/electerm",
+  "number": 4734,
+  "title": "fix(ai): show the provider error body for failed streaming chat requests",
+  "label": "Errors, retries and limits"
+ },
+ {
+  "id": "test29",
+  "repo": "temporalio/samples-go",
+  "number": 569,
+  "title": "Replace retired gemini-2.0-flash in googleadk samples",
+  "label": "Retired model defaults"
+ },
+ {
+  "id": "test30",
+  "repo": "agentscope-ai/agentscope-java",
+  "number": 3852,
+  "title": "fix(anthropic): report the stop reason of a response as its finish reason",
+  "label": "Provider API compatibility"
+ },
+ {
+  "id": "test31",
+  "repo": "Kong/unirest-java",
+  "number": 596,
+  "title": "fix: append query parameters before URI fragments",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test32",
+  "repo": "Agent-Field/agentfield",
+  "number": 1206,
+  "title": "fix(sdk-ts): apply rate-limit retry and circuit breaker to AIClient.stream",
+  "label": "Errors, retries and limits"
+ },
+ {
+  "id": "test33",
+  "repo": "sligter/LandPPT",
+  "number": 131,
+  "title": "fix: replace the retired gemini-1.5-flash default Google model",
+  "label": "Retired model defaults"
+ },
+ {
+  "id": "test34",
+  "repo": "activeagents/activeagent",
+  "number": 722,
+  "title": "Pass tool_choice to RubyLLM",
+  "label": "Streaming and tool calls"
+ },
+ {
+  "id": "test35",
+  "repo": "agavra/tuicr",
+  "number": 845,
+  "title": "fix(installer): select musl assets on musl Linux",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test36",
+  "repo": "upstash/redis-js",
+  "number": 1470,
+  "title": "fix(xclaim): send TIME only when timeMS is set and keep zero values",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test37",
+  "repo": "shaarli/Shaarli",
+  "number": 2296,
+  "title": "fix(tags): keep numeric tags in the tag list and make searching for tag 0 filter",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test38",
+  "repo": "Rails-Designer/mata",
+  "number": 20,
+  "title": "Close live reload connections of closed tabs",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test39",
+  "repo": "Mirascope/mirascope",
+  "number": 2954,
+  "title": "fix(openai): skip temperature and top_p for reasoning models on the Responses API",
+  "label": "Provider API compatibility"
+ },
+ {
+  "id": "test40",
+  "repo": "GoDiao/dreamcoder",
+  "number": 203,
+  "title": "fix(server): request usage for streamed openai_chat proxy calls",
+  "label": "Token usage and cost"
+ },
+ {
+  "id": "test41",
+  "repo": "danielmiessler/Fabric",
+  "number": 2289,
+  "title": "fix(plugins): refuse plaintext http to remote hosts for OpenAI, Exolab and Codex",
+  "label": "Security"
+ },
+ {
+  "id": "test42",
+  "repo": "we-promise/sure",
+  "number": 4275,
+  "title": "Kraken: leave the Add Account modal at the top level when setup can't open",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test43",
+  "repo": "NPC-Worldwide/npcpy",
+  "number": 330,
+  "title": "fix(audio): default Gemini Live to gemini-3.8-live",
+  "label": "Retired model defaults"
+ },
+ {
+  "id": "test44",
+  "repo": "deepset-ai/haystack",
+  "number": 12518,
+  "title": "fix: serialize `timeout` and `max_retries` in `OpenAIImageGenerator.to_dict`",
+  "label": "Parsing and validation"
+ },
+ {
+  "id": "test45",
+  "repo": "lich0821/ccNexus",
+  "number": 146,
+  "title": "fix: replace retired probe default models for Claude and OpenAI",
+  "label": "Retired model defaults"
+ },
+ {
+  "id": "test46",
+  "repo": "reticlehq/reticle",
+  "number": 2119,
+  "title": "fix(server): default the unnamed side of an emulate viewport to the headless size",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test47",
+  "repo": "openlit/openlit",
+  "number": 1749,
+  "title": "fix(python-sdk): stop together streamed tool calls from crashing the stream",
+  "label": "Streaming and tool calls"
+ },
+ {
+  "id": "test48",
+  "repo": "tox-dev/tox",
+  "number": 4300,
+  "title": "🐛 fix(run): decode installpkg file URIs once",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test49",
+  "repo": "Agent-Field/agentfield",
+  "number": 1168,
+  "title": "fix(sdk): return an error to the model for malformed tool-call arguments",
+  "label": "Streaming and tool calls"
+ },
+ {
+  "id": "test50",
+  "repo": "deepset-ai/haystack-core-integrations",
+  "number": 4141,
+  "title": "fix: keep parallel tool calls from separate Gemini stream chunks in GoogleGenAIChatGenerator",
+  "label": "Streaming and tool calls"
+ },
+ {
+  "id": "test51",
+  "repo": "slingdata-io/sling-cli",
+  "number": 835,
+  "title": "fix(prometheus): accept d/w/M suffixes in relative start/end when chunking",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test52",
+  "repo": "growthbook/growthbook-c-sharp",
+  "number": 132,
+  "title": "fix: preserve SSE data following heartbeat comments",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test53",
+  "repo": "kagent-dev/kagent",
+  "number": 3568,
+  "title": "fix(go/adk): emit Anthropic streaming tool calls in block order",
+  "label": "Streaming and tool calls"
+ },
+ {
+  "id": "test54",
+  "repo": "we-promise/sure",
+  "number": 4276,
+  "title": "CoinSpot: leave the Add Account modal at the top level when setup can't open",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test55",
+  "repo": "Rails-Designer/perron",
+  "number": 213,
+  "title": "Harden the `Paginate` constructor against missing/invalid config",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test56",
+  "repo": "reticlehq/reticle",
+  "number": 2079,
+  "title": "fix(engine): take a text baseline on an SDK that refuses matchCase",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "test57",
+  "repo": "deepset-ai/haystack-core-integrations",
+  "number": 3925,
+  "title": "fix: serialize include_search_metadata in AzureAISearchDocumentStore.to_dict",
+  "label": "RAG and vector stores"
+ },
+ {
+  "id": "test58",
+  "repo": "aandrew-me/tgpt",
+  "number": 530,
+  "title": "fix(helper): write non-interactive HTTP error body to stderr",
+  "label": "Errors, retries and limits"
+ },
+ {
+  "id": "test59",
+  "repo": "k8sgpt-ai/k8sgpt",
+  "number": 1904,
+  "title": "fix: pass configured topp/topk to the Cohere chat request",
+  "label": "Provider API compatibility"
+ },
+ {
+  "id": "test60",
+  "repo": "BlockRunAI/Franklin",
+  "number": 247,
+  "title": "fix: decode UTF-8 incrementally in proxy body, bash output and MCP stderr",
+  "label": "Parsing and validation"
+ }
+]

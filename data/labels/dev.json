@@ -1,0 +1,212 @@
+[
+ {
+  "id": "dev1",
+  "repo": "labring/aiproxy",
+  "number": 672,
+  "title": "fix(gemini): assign distinct indexes to streamed tool calls",
+  "label": "Streaming and tool calls"
+ },
+ {
+  "id": "dev2",
+  "repo": "patterns-ai-core/langchainrb",
+  "number": 1084,
+  "title": "Count thinking tokens in GoogleGeminiResponse#completion_tokens",
+  "label": "Token usage and cost"
+ },
+ {
+  "id": "dev3",
+  "repo": "svix/svix-webhooks",
+  "number": 2792,
+  "title": "fix(javascript): retry HTTP 423 Locked responses",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "dev4",
+  "repo": "dataease/SQLBot",
+  "number": 1471,
+  "title": "fix(datasource): convert CSV datetime columns after parsing",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "dev5",
+  "repo": "open-multi-agent/open-multi-agent",
+  "number": 678,
+  "title": "fix(core): map Anthropic refusal stop_reason to content_filter",
+  "label": "Provider API compatibility"
+ },
+ {
+  "id": "dev6",
+  "repo": "TanStack/ai",
+  "number": 2089,
+  "title": "fix(cohere): apply request timeout to rerank",
+  "label": "Errors, retries and limits"
+ },
+ {
+  "id": "dev7",
+  "repo": "bosun-ai/swiftide",
+  "number": 1250,
+  "title": "fix(openai): keep usage details when streaming chat completions",
+  "label": "Token usage and cost"
+ },
+ {
+  "id": "dev8",
+  "repo": "Abilityai/trinity",
+  "number": 4512,
+  "title": "fix(validation): keep JSON response format for custom validation_prompt instructions",
+  "label": "Parsing and validation"
+ },
+ {
+  "id": "dev9",
+  "repo": "rommapp/romm",
+  "number": 5582,
+  "title": "fix(roms): parse TOSEC compound region and language tags",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "dev10",
+  "repo": "aws-cloudformation/cfn-lint",
+  "number": 4924,
+  "title": "fix(E1700): stop rejecting rule names CloudFormation accepts",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "dev11",
+  "repo": "Abilityai/trinity",
+  "number": 4453,
+  "title": "fix: default VOICE_MODEL to gemini-3.8-live before 3.1 live preview retires",
+  "label": "Retired model defaults"
+ },
+ {
+  "id": "dev12",
+  "repo": "woodpecker-ci/woodpecker",
+  "number": 7526,
+  "title": "Raise matrix per-axis variable limit from 10 to 64",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "dev13",
+  "repo": "mealie-recipes/mealie",
+  "number": 8764,
+  "title": "fix: scale merged duplicate ingredients when adding a recipe to a shopping list",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "dev14",
+  "repo": "valkey-io/valkey-py",
+  "number": 361,
+  "title": "Fix async pipeline error messages embedding the args tuple",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "dev15",
+  "repo": "getsentry/sentry-javascript",
+  "number": 25835,
+  "title": "fix(server-utils): Keep Workers AI streamed tool calls that have no index",
+  "label": "Streaming and tool calls"
+ },
+ {
+  "id": "dev16",
+  "repo": "NVIDIA/aistore",
+  "number": 412,
+  "title": "python/sdk: make SDK exceptions pickleable",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "dev17",
+  "repo": "raphaelmansuy/edgequake",
+  "number": 502,
+  "title": "fix: replace the gpt-4.1-nano OpenAI defaults before its 2026-10-23 shutdown",
+  "label": "Retired model defaults"
+ },
+ {
+  "id": "dev18",
+  "repo": "i-am-bee/beeai-framework",
+  "number": 1885,
+  "title": "fix(tools): route OpenAPITool parameters by their location",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "dev19",
+  "repo": "Mirascope/mirascope",
+  "number": 2925,
+  "title": "fix(openai): report REFUSAL finish reason when a completions message has a refusal",
+  "label": "Provider API compatibility"
+ },
+ {
+  "id": "dev20",
+  "repo": "lofcz/LLMTornado",
+  "number": 284,
+  "title": "fix(pgvector): Order query results by ascending distance",
+  "label": "RAG and vector stores"
+ },
+ {
+  "id": "dev21",
+  "repo": "Arize-ai/phoenix",
+  "number": 17433,
+  "title": "fix(client): validate required name and annotator_kind columns in annotation dataframes",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "dev22",
+  "repo": "k8sgpt-ai/k8sgpt",
+  "number": 1902,
+  "title": "fix: reject empty completions from azureopenai, groq, litellm, gpt2giga and bedrockmantle",
+  "label": "Provider API compatibility"
+ },
+ {
+  "id": "dev23",
+  "repo": "CopilotKit/OpenBot",
+  "number": 982,
+  "title": "fix(desktop): default the Anthropic model to claude-sonnet-5-5",
+  "label": "Retired model defaults"
+ },
+ {
+  "id": "dev24",
+  "repo": "i-am-bee/beeai-framework",
+  "number": 1961,
+  "title": "fix(watsonx-orchestrate): strip trailing slash from instance_url before appending /v1/orchestrate",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "dev25",
+  "repo": "lich0821/ccNexus",
+  "number": 155,
+  "title": "fix: forward Claude image blocks to OpenAI chat and Responses requests",
+  "label": "Provider API compatibility"
+ },
+ {
+  "id": "dev26",
+  "repo": "TanStack/cli",
+  "number": 562,
+  "title": "fix(create): replace retired gemini-2.0-flash-exp in AI chat templates",
+  "label": "Retired model defaults"
+ },
+ {
+  "id": "dev27",
+  "repo": "TanStack/ai",
+  "number": 1970,
+  "title": "fix(ai-gemini): include thinking tokens in completionTokens",
+  "label": "Token usage and cost"
+ },
+ {
+  "id": "dev28",
+  "repo": "lofcz/LLMTornado",
+  "number": 250,
+  "title": "Batch: report an OpenAI line with an HTTP error status as errored",
+  "label": "Errors, retries and limits"
+ },
+ {
+  "id": "dev29",
+  "repo": "grafana/sigma-rule-deployment",
+  "number": 460,
+  "title": "fix(deploy): escape rule group names in the provisioning URL",
+  "label": "Not provider-facing"
+ },
+ {
+  "id": "dev30",
+  "repo": "symfony/symfony",
+  "number": 68274,
+  "title": "[Validator] Fix DateTime constraint throwing ValueError on values containing a null byte",
+  "label": "Not provider-facing"
+ }
+]

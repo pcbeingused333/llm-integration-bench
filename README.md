@@ -33,7 +33,7 @@ That is the whole definition. Everything else is machinery to find out.
 | --- | --- | --- |
 | 1. Score every fix from its diff alone | `scripts/score_fixes.py` | `data/scored_*.json`: candidate / maybe / no, and why |
 | 2. Reproduce a stratified sample | `scripts/reproduce.py` | one record per instance with the outcome |
-| 3. Characterise the corpus | `scripts/taxonomy.py` | `taxonomy.md` |
+| 3. Characterise the corpus | `scripts/taxonomy.py`, `scripts/classify.py`; hand labels in `data/labels/` | `taxonomy.md` |
 
 Step 1 is cheap and static, and it removes what cannot work: no test in the diff, a test-only or
 docs-only change, lockfiles or vendored trees, a test that needs a live provider credential.

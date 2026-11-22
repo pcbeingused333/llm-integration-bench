@@ -7,6 +7,7 @@
 | `CORPUS` | The exact `merge-log-data` commit the 2026-11-20 pool was scored from. |
 | `sample_120.json` | The 120 instances of the random sample behind the first yield estimate. |
 | `instances_2026-11-20.jsonl` | **The manifest: the 625 instances that reproduced.** One JSON object per line. |
+| `labels/dev.json`, `labels/test.json` | Hand labels (one labeller) behind the taxonomy classifier's accuracy: 30 used to tune its rules, 60 held out and scored once. |
 
 ## The manifest
 
